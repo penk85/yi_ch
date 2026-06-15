@@ -1,0 +1,37 @@
+:root {
+  --brand-primary:   #F9A825;
+  --brand-secondary: #1A237E;
+  --brand-tertiary:  #37474F;
+  --brand-accent:    #FDD835;
+  --brand-costume:   #FFFFFF;
+  --ink:             #1A237E;
+  --canvas:          #FFFFFF;
+  --brand-gradient:  linear-gradient(135deg, #F9A825 0%, #1A237E 50%, #FDD835 100%);
+  --deco-1:          #F7CB46;
+  --deco-2:          #99E885;
+  --deco-3:          #C0F7FE;
+  --deco-4:          #FE90E8;
+  --font-display:    'EB Garamond', Georgia, serif;
+  --font-body:       'Work Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono:       'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --paper-anchor: #f2eedf;
+  --surface-card: rgba(255, 255, 255, 0.55);
+  --surface-paper: color-mix(in srgb, var(--brand-accent) 8%, var(--paper-anchor));
+  --rule-dashed: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+  --rule-solid: 1.5px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  --radius-card-lg: 36px; /* large insight / closer / stat cards */
+  --radius-card: 28px; /* default cards, items, process nodes */
+  --radius-card-sm: 24px; /* compact panels, action bars */
+  --radius-tile: 16px; /* swatch tiles */
+  --radius-chip: 14px; /* small decorative chips */
+  --radius-pill: 999px; /* status pills, swatch discs */
+  --gap-outer: 4.2vw; /* ~80px on 1920 — outer slide padding */
+  --gap-cards: 1.5vw; /* ~28px between cards in a row */
+  --gap-cards-lg: 1.9vw; /* ~36px between major panels */
+  --gap-stack: 1.9vw; /* vertical between stacked text */
+  --pad-card-lg: 64px 48px;
+  --pad-card-md: 48px 52px;
+  --pad-card-sm: 28px 30px;
+  --measure-body: 32vw; /* ~614px ≈ 65ch at body size */
+  --measure-display: 43vw; /* ~826px ≈ display headline cap */
+}

@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-06-15T13:46:23.568Z",
+  "source_url": "Style",
+  "preset": "soft-editorial",
+  "tokens_file": "chunks/tokens.css",
+  "easings_file": "chunks/easings.js",
+  "voice_file": "chunks/voice.md",
+  "hints_file": "chunks/composition-hints.md",
+  "type_roles_file": "chunks/type-roles.md",
+  "caption_skin_file": "chunks/caption-skin.html",
+  "components": [
+    {
+      "id": "action-bar",
+      "file": "chunks/components/action-bar.html"
+    },
+    {
+      "id": "button",
+      "file": "chunks/components/button.html"
+    },
+    {
+      "id": "chip",
+      "file": "chunks/components/chip.html"
+    },
+    {
+      "id": "color-card",
+      "file": "chunks/components/color-card.html"
+    },
+    {
+      "id": "dashed-rule",
+      "file": "chunks/components/dashed-rule.html"
+    },
+    {
+      "id": "drop-cap",
+      "file": "chunks/components/drop-cap.html"
+    },
+    {
+      "id": "hero",
+      "file": "chunks/components/hero.html"
+    },
+    {
+      "id": "pull-quote",
+      "file": "chunks/components/pull-quote.html"
+    },
+    {
+      "id": "soft-card",
+      "file": "chunks/components/soft-card.html"
+    },
+    {
+      "id": "stat-counter",
+      "file": "chunks/components/stat-counter.html"
+    },
+    {
+      "id": "step-card",
+      "file": "chunks/components/step-card.html"
+    },
+    {
+      "id": "swatch-row",
+      "file": "chunks/components/swatch-row.html"
+    }
+  ]
+}

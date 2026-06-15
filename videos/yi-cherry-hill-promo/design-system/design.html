@@ -1,0 +1,2612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>capture × Soft Editorial — design.html</title>
+<!--
+  AGENT NOTE — design.html (product-launch-video Phase 1b output)
+  Brand DNA from: 
+  Style preset:   soft-editorial (forced)
+  Generated:      2026-06-15T13:46:20.520Z
+
+  Downstream usage (Phase 4b scene workers):
+    - §2: grep <!-- ROOT-START --> .. <!-- ROOT-END --> → paste into scene <style>
+    - §4: grep <!-- MOTION-START --> .. <!-- MOTION-END --> → paste into <script>
+    - §5: grep <!-- VOICE-START --> .. <!-- VOICE-END --> → register for DOM text copy
+    - §H: grep <!-- HINTS-START --> .. <!-- HINTS-END --> → composition rules for plan agent
+    - §6: grep <!-- COMPONENT: <name> --> .. <!-- /COMPONENT --> → paste by name
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700;800&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- preset chromeFonts: native typography for doc chrome + .preset-native-scope -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Work+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    color: #1A237E;
+    background: #FFFFFF;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+  .ds-section { padding: 80px 0; border-top: 1px solid #e5e5e5; }
+  .ds-section:first-of-type { border-top: none; }
+  .eyebrow { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.6; margin-bottom: 12px; }
+  h1, h2, h3 { font-family: 'EB Garamond', serif; font-weight: 400; letter-spacing: -0.015em; line-height: 1.05; }
+  h2 { font-size: clamp(36px, 4vw, 56px); margin-bottom: 16px; }
+  h3.ds-h3 { font-size: 18px; font-family: 'Work Sans', sans-serif; font-weight: 600; margin: 20px 0 12px; opacity: 0.85; }
+  .ds-prose { font-size: 16px; max-width: 62ch; margin: 12px 0; opacity: 0.85; }
+  .ds-prose code, code { font-family: 'JetBrains Mono', monospace; background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 0.92em; }
+  .ds-code { font-family: 'JetBrains Mono', monospace; background: #0f1419; color: #e6edf3; padding: 20px 24px; border-radius: 8px; overflow-x: auto; font-size: 13px; line-height: 1.6; margin: 16px 0; white-space: pre; }
+  .ds-summary { cursor: pointer; padding: 8px 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; }
+  details[open] .ds-summary { opacity: 1; }
+
+  /* Paste-ready source blocks — collapsed by default because the raw markdown / CSS
+     in <pre> doesn't render as a readable doc (it's machine-bound for emit-chunks).
+     The rendered version sits above each <details>. */
+  .ds-paste-ready { margin: 16px 0; padding: 12px 16px; border: 1px dashed #bbb; border-radius: 8px; background: #fafafa; }
+  .ds-paste-ready > .ds-summary { padding: 4px 0; font-size: 11px; opacity: 0.85; }
+  .ds-paste-ready > .ds-summary code { background: #eee; padding: 1px 5px; border-radius: 3px; font-size: 0.95em; }
+  .ds-paste-ready[open] > .ds-summary { margin-bottom: 8px; }
+  .ds-paste-ready > pre.ds-code { margin: 0; }
+
+  /* ── Title card */
+  .title-card { padding: 80px 0 64px; border-bottom: 1px solid #e5e5e5; }
+  .title-card-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+  .brand-row { display: flex; gap: 12px; align-items: baseline; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px; }
+  .brand-name { color: #F9A825; font-weight: 700; }
+  .brand-x { opacity: 0.4; }
+  .style-name { color: #FDD835; font-weight: 700; }
+  .title-display { font-size: clamp(48px, 7vw, 96px); margin: 0; }
+  .title-meta { margin-top: 32px; font-family: 'JetBrains Mono', monospace; font-size: 12px; opacity: 0.7; }
+  .title-meta strong { font-weight: 700; opacity: 0.9; }
+
+  /* ── §1 Brand DNA */
+  .dna-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0; }
+  .dna-grid-5 { grid-template-columns: repeat(5, 1fr); }
+  .dna-swatch { padding: 24px 20px; border-radius: 8px; min-height: 120px; display: flex; flex-direction: column; justify-content: space-between; }
+  .dna-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.8; }
+  .dna-hex { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; }
+  .dna-desc { margin-top: 24px; font-size: 18px; line-height: 1.55; max-width: 60ch; opacity: 0.85; }
+  .dna-gradient { margin: 32px 0 0; }
+  .dna-gradient-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.6; margin-bottom: 10px; }
+  .dna-gradient-bar { height: 96px; border-radius: 8px; }
+  .dna-gradient-code { display: block; margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; opacity: 0.7; word-break: break-all; }
+  @media (max-width: 900px) { .dna-grid-5 { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 720px) { .dna-grid { grid-template-columns: repeat(2, 1fr); } .dna-grid-5 { grid-template-columns: repeat(2, 1fr); } }
+
+  /* ── §3 Typography */
+  .type-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+  .type-card { padding: 24px; border: 1px solid #e5e5e5; border-radius: 8px; }
+  .type-role { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.6; }
+  .type-name { font-size: 18px; font-weight: 600; margin: 4px 0; }
+  .type-note { font-family: 'JetBrains Mono', monospace; font-size: 11px; opacity: 0.5; margin-bottom: 16px; }
+  .type-specimen { margin-top: 16px; }
+  @media (max-width: 720px) { .type-grid { grid-template-columns: 1fr; } }
+
+  /* ── §5 Voice */
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 24px 0; }
+  .voice-dl dt { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.6; margin-top: 16px; }
+  .voice-dl dd { font-size: 15px; margin-top: 4px; }
+  .voice-cta { display: inline-block; padding: 2px 10px; border: 1px solid #ddd; border-radius: 999px; font-size: 13px; margin: 2px 4px 2px 0; }
+  .voice-sample { font-size: 15px; opacity: 0.85; margin: 4px 0; }
+  .voice-pair { padding: 16px; border: 1px solid #e5e5e5; border-radius: 8px; margin: 12px 0; }
+  .voice-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.6; margin-right: 8px; }
+  .voice-in { margin-bottom: 8px; }
+  .voice-out { opacity: 0.7; }
+  @media (max-width: 720px) { .voice-grid { grid-template-columns: 1fr; } }
+
+  /* ── §6 Components */
+  .comp-card { padding: 0; border: 1px solid #e5e5e5; border-radius: 8px; margin: 16px 0; overflow: hidden; }
+  .comp-head { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: #fafafa; border-bottom: 1px solid #e5e5e5; }
+  .comp-name { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; }
+  .comp-marker { font-family: 'JetBrains Mono', monospace; font-size: 11px; opacity: 0.6; }
+  /* Component preview: components are authored for 1920×1080 scenes. The doc
+     container is ~1056px wide, so wide components (mega-stat etc.) overflow.
+     Allow horizontal scroll so reviewers can pan; max-height caps vertical too. */
+  .comp-preview { padding: 32px; background: #FFFFFF; overflow: auto; max-height: 720px; }
+  .comp-preview::-webkit-scrollbar { height: 8px; width: 8px; }
+  .comp-preview::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+  /* ── Markdown blocks (mdBlockToHtml output) */
+  .ds-prose-block { max-width: 80ch; margin: 16px 0; }
+  .ds-prose-block .ds-prose { margin: 0 0 12px; }
+  .ds-prose-block .ds-prose:last-child { margin-bottom: 0; }
+  .ds-prose-block .ds-h2 { font-family: 'EB Garamond', serif; font-size: 24px; margin: 24px 0 12px; }
+  .ds-prose-block .ds-h3 { font-size: 16px; font-weight: 700; margin: 20px 0 8px; opacity: 0.9; }
+  .ds-prose-block .ds-h4 { font-size: 14px; font-weight: 700; margin: 18px 0 6px; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.06em; }
+  .ds-prose-block .ds-list { margin: 8px 0 16px; padding-left: 24px; }
+  .ds-prose-block .ds-list li { margin: 4px 0; line-height: 1.55; }
+  .ds-prose-block .ds-list li code { font-size: 0.92em; }
+  .ds-prose-block .ds-code { margin: 12px 0; }
+  .ds-table { border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .ds-table th, .ds-table td { padding: 8px 12px; border: 1px solid #e5e5e5; vertical-align: top; text-align: left; }
+  .ds-table th { background: #fafafa; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .ds-table td code { font-size: 0.92em; }
+  
+
+/* ── Preset §I page styling (from soft-editorial.md) ── */
+/* ── Preset-native typography vars (loaded via preset-meta.chromeFonts.googleFontsHref).
+ * Cormorant Garamond + Work Sans + JetBrains Mono for doc chrome; script slot = Cormorant italic (no third face); mono for completeness only. */
+:root {
+  --f-disp-native:
+    "Cormorant Garamond", "Cormorant", "EB Garamond", "Fraunces", "Garamond", "Times New Roman",
+    serif;
+  --f-body-native:
+    "Work Sans", "Inter", "Source Sans 3", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --f-script-native:
+    "Cormorant Garamond", "Cormorant", "EB Garamond", "Fraunces", "Garamond", "Times New Roman",
+    serif;
+  --f-mono-native:
+    "JetBrains Mono", "IBM Plex Mono", "Space Mono", "Menlo", ui-monospace, monospace;
+}
+
+/* .preset-native-scope: re-binds var(--font-*) to preset-native families for component previews + §T atlas. */
+.preset-native-scope {
+  --font-display: var(--f-disp-native);
+  --font-body: var(--f-body-native);
+  --font-script: var(--f-script-native);
+  --font-mono: var(--f-mono-native);
+}
+
+body {
+  background: var(--paper-anchor);
+  color: var(--ink);
+}
+.title-card {
+  padding: 120px 0 80px;
+  border-bottom: var(--rule-dashed);
+}
+.title-display {
+  font-style: italic;
+  max-width: var(--measure-display);
+  font-weight: 500;
+}
+.ds-section {
+  border-top: var(--rule-dashed);
+  padding: 96px 0;
+}
+.type-card,
+.voice-pair,
+.comp-card {
+  background: var(--surface-card) !important;
+  border: none !important;
+  border-radius: var(--radius-card-sm) !important;
+  box-shadow: none !important;
+  margin: 24px 0 !important;
+}
+/* dna-swatch keeps inline brand-color background */
+.dna-swatch {
+  border: none !important;
+  border-radius: var(--radius-card-sm) !important;
+  box-shadow: none !important;
+}
+.comp-head {
+  background: transparent !important;
+  border-bottom: var(--rule-dashed) !important;
+}
+.ds-code {
+  background: rgba(255, 255, 255, 0.65);
+  border: var(--rule-dashed);
+  border-radius: var(--radius-card-sm) !important;
+}
+h2 {
+  font-style: italic;
+  font-weight: 500;
+}
+.eyebrow {
+  font-family: "Work Sans", sans-serif;
+  text-transform: none;
+  letter-spacing: -0.005em;
+}
+/* ── §T Type-role atlas. var(--font-*) tokens → brand DNA; only the recipe is preset-declared. */
+.ds-trole-box {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: var(--radius-card-sm, 24px);
+  background: var(--surface-card, rgba(255, 255, 255, 0.55));
+  overflow: hidden;
+  margin-top: 24px;
+}
+.ds-trole-row {
+  padding: 28px 32px;
+  border-bottom: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+}
+.ds-trole-row:last-child {
+  border-bottom: 0;
+}
+.ds-trole-sample {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 960px) {
+  .ds-trole-row {
+    padding: 24px;
+  }
+}
+
+/* ── Type-role samples. var(--font-display/body/script) → brand DNA. */
+.t-trole-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(96px, 12vw, 232px);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.t-trole-display em {
+  font-weight: 400;
+  font-style: italic;
+}
+.t-trole-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(96px, 10vw, 188px);
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.t-trole-numeral-hero {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(160px, 16vw, 320px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.t-trole-section-headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(56px, 5vw, 96px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.t-trole-quote-text {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(56px, 5vw, 88px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  max-width: 22ch;
+}
+.t-trole-card-headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(44px, 4vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.t-trole-opener {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(32px, 3.2vw, 56px);
+  line-height: 1.1;
+  color: var(--ink);
+  max-width: 32ch;
+}
+.t-trole-drop-cap {
+  float: left;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(88px, 9vw, 132px);
+  line-height: 0.85;
+  color: var(--ink);
+  padding: 8px 14px 0 0;
+}
+.t-trole-numeral-step {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(56px, 6vw, 92px);
+  line-height: 0.9;
+  text-transform: lowercase;
+  color: var(--ink);
+}
+.t-trole-kicker {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(32px, 2.4vw, 38px);
+  line-height: 1.2;
+  color: color-mix(in srgb, var(--ink) 72%, transparent);
+}
+.t-trole-marker {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(26px, 2vw, 32px);
+  line-height: 1.3;
+  color: color-mix(in srgb, var(--ink) 60%, transparent);
+}
+.t-trole-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(26px, 1.9vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.t-trole-body em {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+}
+.t-trole-page-marker {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(26px, 1.7vw, 32px);
+  line-height: 1;
+  color: color-mix(in srgb, var(--ink) 55%, transparent);
+}
+
+</style>
+</head>
+<body>
+
+
+<section class="title-card">
+  <div class="title-card-inner">
+    <div class="brand-row">
+      <span class="brand-name">capture</span>
+      <span class="brand-x">×</span>
+      <span class="style-name">Soft Editorial</span>
+    </div>
+    <h1 class="title-display">capture</h1>
+    <p class="title-meta">
+      <strong>Source</strong> —
+      &nbsp;·&nbsp;
+      <strong>Material</strong> flat
+      &nbsp;·&nbsp;
+      <strong>Intent</strong> landing
+      &nbsp;·&nbsp;
+      <strong>Style</strong> Soft Editorial (forced)
+    </p>
+  </div>
+</section>
+
+<main class="wrap">
+
+<section id="brand-dna" class="ds-section">
+  <div class="eyebrow">§1 · Brand DNA (from site)</div>
+  <h2>capture in one glance</h2>
+  <div class="dna-grid dna-grid-5">
+    
+    <div class="dna-swatch" style="background: #F9A825; color: #000; ">
+      <div class="dna-label">Primary</div>
+      <div class="dna-hex">#F9A825</div>
+    </div>
+    
+    <div class="dna-swatch" style="background: #1A237E; color: #fff; ">
+      <div class="dna-label">Secondary</div>
+      <div class="dna-hex">#1A237E</div>
+    </div>
+    
+    <div class="dna-swatch" style="background: #FDD835; color: #000; ">
+      <div class="dna-label">Accent</div>
+      <div class="dna-hex">#FDD835</div>
+    </div>
+    
+    <div class="dna-swatch" style="background: #FFFFFF; color: #000; border: 1px solid #eee;">
+      <div class="dna-label">Canvas</div>
+      <div class="dna-hex">#FFFFFF</div>
+    </div>
+    
+    <div class="dna-swatch" style="background: #1A237E; color: #fff; ">
+      <div class="dna-label">Ink</div>
+      <div class="dna-hex">#1A237E</div>
+    </div>
+  </div>
+
+  <div class="dna-gradient">
+    <div class="dna-gradient-label">Signature gradient</div>
+    <div class="dna-gradient-bar" style="background: linear-gradient(135deg, #F9A825 0%, #1A237E 50%, #FDD835 100%);"></div>
+    <code class="dna-gradient-code">linear-gradient(135deg, #F9A825 0%, #1A237E 50%, #FDD835 100%)</code>
+  </div>
+
+  <p class="dna-desc">Orthodox synagogue and vibrant Jewish community in Cherry Hill, NJ — welcoming young families with affordable housing, excellent Jewish schools, Torah learning, and warm community life</p>
+</section>
+
+<section id="color-tokens" class="ds-section">
+  <div class="eyebrow">§2 · Color × Style overlay</div>
+  <h2>Color tokens + Soft Editorial decoration vars</h2>
+  <p class="ds-prose">Brand colors come from the site. Decoration variables come from the <strong>Soft Editorial</strong> preset. The <code>:root</code> block is live on this page (so §6 component previews render properly). The paste-ready source for <code>chunks/tokens.css</code> is collapsed below — open it to copy.</p>
+  <style>:root {
+  --brand-primary:   #F9A825;
+  --brand-secondary: #1A237E;
+  --brand-tertiary:  #37474F;
+  --brand-accent:    #FDD835;
+  --brand-costume:   #FFFFFF;
+  --ink:             #1A237E;
+  --canvas:          #FFFFFF;
+  --brand-gradient:  linear-gradient(135deg, #F9A825 0%, #1A237E 50%, #FDD835 100%);
+  --deco-1:          #F7CB46;
+  --deco-2:          #99E885;
+  --deco-3:          #C0F7FE;
+  --deco-4:          #FE90E8;
+  --font-display:    'EB Garamond', Georgia, serif;
+  --font-body:       'Work Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono:       'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --paper-anchor: #f2eedf;
+  --surface-card: rgba(255, 255, 255, 0.55);
+  --surface-paper: color-mix(in srgb, var(--brand-accent) 8%, var(--paper-anchor));
+  --rule-dashed: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+  --rule-solid: 1.5px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  --radius-card-lg: 36px; /* large insight / closer / stat cards */
+  --radius-card: 28px; /* default cards, items, process nodes */
+  --radius-card-sm: 24px; /* compact panels, action bars */
+  --radius-tile: 16px; /* swatch tiles */
+  --radius-chip: 14px; /* small decorative chips */
+  --radius-pill: 999px; /* status pills, swatch discs */
+  --gap-outer: 4.2vw; /* ~80px on 1920 — outer slide padding */
+  --gap-cards: 1.5vw; /* ~28px between cards in a row */
+  --gap-cards-lg: 1.9vw; /* ~36px between major panels */
+  --gap-stack: 1.9vw; /* vertical between stacked text */
+  --pad-card-lg: 64px 48px;
+  --pad-card-md: 48px 52px;
+  --pad-card-sm: 28px 30px;
+  --measure-body: 32vw; /* ~614px ≈ 65ch at body size */
+  --measure-display: 43vw; /* ~826px ≈ display headline cap */
+  }</style>
+  <details class="ds-paste-ready">
+    <summary class="ds-summary">▸ Paste-ready source → <code>chunks/tokens.css</code></summary>
+    <pre class="ds-code"><!-- ROOT-START -->:root {
+  --brand-primary:   #F9A825;
+  --brand-secondary: #1A237E;
+  --brand-tertiary:  #37474F;
+  --brand-accent:    #FDD835;
+  --brand-costume:   #FFFFFF;
+  --ink:             #1A237E;
+  --canvas:          #FFFFFF;
+  --brand-gradient:  linear-gradient(135deg, #F9A825 0%, #1A237E 50%, #FDD835 100%);
+  --deco-1:          #F7CB46;
+  --deco-2:          #99E885;
+  --deco-3:          #C0F7FE;
+  --deco-4:          #FE90E8;
+  --font-display:    'EB Garamond', Georgia, serif;
+  --font-body:       'Work Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono:       'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --paper-anchor: #f2eedf;
+  --surface-card: rgba(255, 255, 255, 0.55);
+  --surface-paper: color-mix(in srgb, var(--brand-accent) 8%, var(--paper-anchor));
+  --rule-dashed: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+  --rule-solid: 1.5px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  --radius-card-lg: 36px; /* large insight / closer / stat cards */
+  --radius-card: 28px; /* default cards, items, process nodes */
+  --radius-card-sm: 24px; /* compact panels, action bars */
+  --radius-tile: 16px; /* swatch tiles */
+  --radius-chip: 14px; /* small decorative chips */
+  --radius-pill: 999px; /* status pills, swatch discs */
+  --gap-outer: 4.2vw; /* ~80px on 1920 — outer slide padding */
+  --gap-cards: 1.5vw; /* ~28px between cards in a row */
+  --gap-cards-lg: 1.9vw; /* ~36px between major panels */
+  --gap-stack: 1.9vw; /* vertical between stacked text */
+  --pad-card-lg: 64px 48px;
+  --pad-card-md: 48px 52px;
+  --pad-card-sm: 28px 30px;
+  --measure-body: 32vw; /* ~614px ≈ 65ch at body size */
+  --measure-display: 43vw; /* ~826px ≈ display headline cap */
+}<!-- ROOT-END --></pre>
+  </details>
+</section>
+
+<section id="typography" class="ds-section">
+  <div class="eyebrow">§3 · Typography</div>
+  <h2>Type roles</h2>
+  <p class="ds-prose">Font families resolved by 4-step lookup: site name on Google Fonts → self-host local woff2 → preset §D fallback → final hard-coded fallback. Each card shows which step landed.</p>
+
+  <div class="type-grid">
+    
+    <div class="type-card">
+      <div class="type-role">Display</div>
+      <div class="type-name">EB Garamond</div>
+      <div class="type-note">site has no display face → preset fallback</div>
+      <div class="type-specimen" style="font-family: 'EB Garamond', serif; font-size: 72px; font-weight: 400; letter-spacing: -0.02em; line-height: 1;">capture</div>
+    </div>
+    <div class="type-card">
+      <div class="type-role">Body</div>
+      <div class="type-name">Work Sans</div>
+      <div class="type-note">site has no body face → preset fallback</div>
+      <div class="type-specimen" style="font-family: 'Work Sans', sans-serif; font-size: 22px; line-height: 1.5;">The quick brown fox jumps over the lazy dog.</div>
+    </div>
+    <div class="type-card">
+      <div class="type-role">Mono</div>
+      <div class="type-name">JetBrains Mono</div>
+      <div class="type-note">site has no mono face → preset fallback</div>
+      <div class="type-specimen" style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 18px;">font: JetBrains Mono</div>
+    </div>
+  </div>
+
+  <h3 class="ds-h3" style="margin-top: 48px;">Type-role atlas</h3>
+  <div class="ds-trole-box">
+    
+    <div class="ds-trole-row" data-scale="display" data-family="display" data-px-min="168" data-px-max="232" data-weight="500" data-leading="0.92" data-tracking="-0.02em" data-case="sentence" data-purpose="cover-scale headline (Cormorant 500 roman, generous measure)">
+      <div class="ds-trole-sample"><div class="t-trole-display">A canvas where teams design <em>together</em>.</div></div>
+    </div>
+    <div class="ds-trole-row" data-scale="title" data-family="display" data-px-min="140" data-px-max="188" data-weight="500" data-leading="0.95" data-tracking="-0.015em" data-case="sentence" data-purpose="section / chapter title at near-cover scale">
+      <div class="ds-trole-sample"><div class="t-trole-title">Chapter one</div></div>
+    </div>
+    <div class="ds-trole-row" data-scale="numeral-hero" data-family="display" data-px-min="240" data-px-max="320" data-weight="500" data-leading="0.9" data-tracking="-0.02em" data-case="sentence" data-purpose="featured hero numeral inside a span-two stat card">
+      <div class="ds-trole-sample"><div class="t-trole-numeral-hero">4M</div></div>
+    </div>
+    <div class="ds-trole-row" data-scale="section-headline" data-family="display" data-px-min="72" data-px-max="96" data-weight="500" data-leading="0.98" data-tracking="-0.01em" data-case="sentence" data-purpose="workhorse section headline — chart / comparison / analysis">
+      <div class="ds-trole-sample"><div class="t-trole-section-headline">A quieter way to work</div></div>
+    </div>
+    <div class="ds-trole-row" data-scale="quote-text" data-family="display" data-px-min="72" data-px-max="88" data-weight="500" data-leading="1.05" data-tracking="-0.01em" data-case="sentence" data-purpose="pull-quote body — Cormorant 500 at section scale">
+      <div class="ds-trole-sample"><div class="t-trole-quote-text">Considered, unhurried, careful.</div></div>
+    </div>
+    <div class="ds-trole-row" data-scale="card-headline" data-family="display" data-px-min="56" data-px-max="72" data-weight="500" data-leading="1" data-tracking="-0.01em" data-case="sentence" data-purpose="headline filling the head of a card or panel">
+      <div class="ds-trole-sample"><div class="t-trole-card-headline">Field notes</div></div>
+    </div>
+    <div class="ds-trole-row" data-scale="opener" data-family="script" data-px-min="44" data-px-max="56" data-weight="500" data-leading="1.1" data-tracking="0" data-case="sentence" data-purpose="italic opener paragraph for long-form reads (Cormorant italic 500)">
+      <div class="ds-trole-sample"><div class="t-trole-opener">A short italic opening, set in the same serif, lighter on the page.</div></div>
+    </div>
+    <div class="ds-trole-row" data-scale="drop-cap" data-family="display" data-px-min="108" data-px-max="132" data-weight="500" data-leading="0.85" data-tracking="0" data-case="sentence" data-purpose="drop cap opening a long-form paragraph (Cormorant 500, floated)">
+      <div class="ds-trole-sample"><p class="t-trole-body"><span class="t-trole-drop-cap">F</span>or the editorial register the drop cap is the system's most distinctive moment — 132px Cormorant Garamond medium, floated left, the paragraph body wrapping warmly around it.</p></div>
+    </div>
+    <div class="ds-trole-row" data-scale="numeral-step" data-family="script" data-px-min="64" data-px-max="92" data-weight="500" data-leading="0.9" data-tracking="0" data-case="lower" data-purpose="italic lowercase roman numeral step ordinal (i. ii. iii. iv. v.)">
+      <div class="ds-trole-sample"><div class="t-trole-numeral-step">iii.</div></div>
+    </div>
+    <div class="ds-trole-row" data-scale="kicker" data-family="script" data-px-min="32" data-px-max="38" data-weight="400" data-leading="1.2" data-tracking="0" data-case="sentence" data-purpose="italic kicker above a cover headline (Cormorant italic 400)">
+      <div class="ds-trole-sample"><div class="t-trole-kicker">— vol. iii, an essay on calm</div></div>
+    </div>
+    <div class="ds-trole-row" data-scale="marker" data-family="script" data-px-min="26" data-px-max="32" data-weight="400" data-leading="1.3" data-tracking="0" data-case="sentence" data-purpose="small italic ornamental marker (sign-offs, edition labels)">
+      <div class="ds-trole-sample"><div class="t-trole-marker">— filed under field notes</div></div>
+    </div>
+    <div class="ds-trole-row" data-scale="eyebrow" data-family="body" data-px-min="26" data-px-max="34" data-weight="400" data-leading="1.2" data-tracking="-0.005em" data-case="sentence" data-purpose="plain Work Sans eyebrow at top-left chrome (NEVER uppercase, NEVER italic)">
+      <div class="ds-trole-sample"><div class="t-trole-eyebrow">Section · The quiet field</div></div>
+    </div>
+    <div class="ds-trole-row" data-scale="page-marker" data-family="script" data-px-min="26" data-px-max="32" data-weight="400" data-leading="1" data-tracking="0" data-case="sentence" data-purpose="italic serif page numeral at top-right chrome (Cormorant italic 400, ink-soft)">
+      <div class="ds-trole-sample"><div class="t-trole-page-marker">iv</div></div>
+    </div>
+  </div>
+
+  <details class="ds-paste-ready" style="margin-top: 32px;">
+    <summary class="ds-summary">▸ Paste-ready source → <code>chunks/type-roles.md</code> (scene worker reads on demand)</summary>
+    <pre class="ds-code"><!-- TYPE-ROLES-START -->
+# Type-roles atlas — Soft Editorial
+
+Phase 4b scene worker reads this when text outside §6 components is needed (hero displays, ledes, pill rows, CTA buttons, …). Workflow: pick role by id → paste the CSS rule into scene `&lt;style&gt;` with `s&lt;N&gt;-` prefix on the class names → wrap content using the prefixed class. Family tokens (`var(--font-*)`) resolve to brand DNA at scene-render time.
+
+## type-role: display
+
+- family: display · px: 168–232 · weight: 500
+- leading: 0.92 · tracking: -0.02em · case: sentence
+- purpose: cover-scale headline (Cormorant 500 roman, generous measure)
+
+```css
+.t-trole-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(96px, 12vw, 232px);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.t-trole-display em {
+  font-weight: 400;
+  font-style: italic;
+}
+```
+
+Sample:
+
+```html
+&lt;div class=&quot;t-trole-display&quot;&gt;A canvas where teams design &lt;em&gt;together&lt;/em&gt;.&lt;/div&gt;
+```
+
+## type-role: title
+
+- family: display · px: 140–188 · weight: 500
+- leading: 0.95 · tracking: -0.015em · case: sentence
+- purpose: section / chapter title at near-cover scale
+
+```css
+.t-trole-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(96px, 10vw, 188px);
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+```
+
+Sample:
+
+```html
+&lt;div class=&quot;t-trole-title&quot;&gt;Chapter one&lt;/div&gt;
+```
+
+## type-role: numeral-hero
+
+- family: display · px: 240–320 · weight: 500
+- leading: 0.9 · tracking: -0.02em · case: sentence
+- purpose: featured hero numeral inside a span-two stat card
+
+```css
+.t-trole-numeral-hero {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(160px, 16vw, 320px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+```
+
+Sample:
+
+```html
+&lt;div class=&quot;t-trole-numeral-hero&quot;&gt;4M&lt;/div&gt;
+```
+
+## type-role: section-headline
+
+- family: display · px: 72–96 · weight: 500
+- leading: 0.98 · tracking: -0.01em · case: sentence
+- purpose: workhorse section headline — chart / comparison / analysis
+
+```css
+.t-trole-section-headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(56px, 5vw, 96px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+```
+
+Sample:
+
+```html
+&lt;div class=&quot;t-trole-section-headline&quot;&gt;A quieter way to work&lt;/div&gt;
+```
+
+## type-role: quote-text
+
+- family: display · px: 72–88 · weight: 500
+- leading: 1.05 · tracking: -0.01em · case: sentence
+- purpose: pull-quote body — Cormorant 500 at section scale
+
+```css
+.t-trole-quote-text {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(56px, 5vw, 88px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  max-width: 22ch;
+}
+```
+
+Sample:
+
+```html
+&lt;div class=&quot;t-trole-quote-text&quot;&gt;Considered, unhurried, careful.&lt;/div&gt;
+```
+
+## type-role: card-headline
+
+- family: display · px: 56–72 · weight: 500
+- leading: 1 · tracking: -0.01em · case: sentence
+- purpose: headline filling the head of a card or panel
+
+```css
+.t-trole-card-headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(44px, 4vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+```
+
+Sample:
+
+```html
+&lt;div class=&quot;t-trole-card-headline&quot;&gt;Field notes&lt;/div&gt;
+```
+
+## type-role: opener
+
+- family: script · px: 44–56 · weight: 500
+- leading: 1.1 · tracking: 0 · case: sentence
+- purpose: italic opener paragraph for long-form reads (Cormorant italic 500)
+
+```css
+.t-trole-opener {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(32px, 3.2vw, 56px);
+  line-height: 1.1;
+  color: var(--ink);
+  max-width: 32ch;
+}
+```
+
+Sample:
+
+```html
+&lt;div class=&quot;t-trole-opener&quot;&gt;A short italic opening, set in the same serif, lighter on the page.&lt;/div&gt;
+```
+
+## type-role: drop-cap
+
+- family: display · px: 108–132 · weight: 500
+- leading: 0.85 · tracking: 0 · case: sentence
+- purpose: drop cap opening a long-form paragraph (Cormorant 500, floated)
+
+```css
+.t-trole-drop-cap {
+  float: left;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(88px, 9vw, 132px);
+  line-height: 0.85;
+  color: var(--ink);
+  padding: 8px 14px 0 0;
+}
+```
+
+Sample:
+
+```html
+&lt;p class=&quot;t-trole-body&quot;&gt;&lt;span class=&quot;t-trole-drop-cap&quot;&gt;F&lt;/span&gt;or the editorial register the drop cap is the system&#39;s most distinctive moment — 132px Cormorant Garamond medium, floated left, the paragraph body wrapping warmly around it.&lt;/p&gt;
+```
+
+## type-role: numeral-step
+
+- family: script · px: 64–92 · weight: 500
+- leading: 0.9 · tracking: 0 · case: lower
+- purpose: italic lowercase roman numeral step ordinal (i. ii. iii. iv. v.)
+
+```css
+.t-trole-numeral-step {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(56px, 6vw, 92px);
+  line-height: 0.9;
+  text-transform: lowercase;
+  color: var(--ink);
+}
+```
+
+Sample:
+
+```html
+&lt;div class=&quot;t-trole-numeral-step&quot;&gt;iii.&lt;/div&gt;
+```
+
+## type-role: kicker
+
+- family: script · px: 32–38 · weight: 400
+- leading: 1.2 · tracking: 0 · case: sentence
+- purpose: italic kicker above a cover headline (Cormorant italic 400)
+
+```css
+.t-trole-kicker {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(32px, 2.4vw, 38px);
+  line-height: 1.2;
+  color: color-mix(in srgb, var(--ink) 72%, transparent);
+}
+```
+
+Sample:
+
+```html
+&lt;div class=&quot;t-trole-kicker&quot;&gt;— vol. iii, an essay on calm&lt;/div&gt;
+```
+
+## type-role: marker
+
+- family: script · px: 26–32 · weight: 400
+- leading: 1.3 · tracking: 0 · case: sentence
+- purpose: small italic ornamental marker (sign-offs, edition labels)
+
+```css
+.t-trole-marker {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(26px, 2vw, 32px);
+  line-height: 1.3;
+  color: color-mix(in srgb, var(--ink) 60%, transparent);
+}
+```
+
+Sample:
+
+```html
+&lt;div class=&quot;t-trole-marker&quot;&gt;— filed under field notes&lt;/div&gt;
+```
+
+## type-role: eyebrow
+
+- family: body · px: 26–34 · weight: 400
+- leading: 1.2 · tracking: -0.005em · case: sentence
+- purpose: plain Work Sans eyebrow at top-left chrome (NEVER uppercase, NEVER italic)
+
+```css
+.t-trole-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(26px, 1.9vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+```
+
+Sample:
+
+```html
+&lt;div class=&quot;t-trole-eyebrow&quot;&gt;Section · The quiet field&lt;/div&gt;
+```
+
+## type-role: page-marker
+
+- family: script · px: 26–32 · weight: 400
+- leading: 1 · tracking: 0 · case: sentence
+- purpose: italic serif page numeral at top-right chrome (Cormorant italic 400, ink-soft)
+
+```css
+.t-trole-page-marker {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(26px, 1.7vw, 32px);
+  line-height: 1;
+  color: color-mix(in srgb, var(--ink) 55%, transparent);
+}
+```
+
+Sample:
+
+```html
+&lt;div class=&quot;t-trole-page-marker&quot;&gt;iv&lt;/div&gt;
+```
+<!-- TYPE-ROLES-END --></pre>
+  </details>
+  <details style="margin-top: 32px;">
+    <summary class="ds-summary">Font pairing recipe (preset §D)</summary>
+    <div class="ds-prose-block"><ul class="ds-list"><li><strong>display</strong>: <code>&#39;Cormorant Garamond&#39;</code> · <code>&#39;Cormorant&#39;</code> · <code>&#39;EB Garamond&#39;</code> · <code>&#39;Fraunces&#39;</code> wght 500</li><li><strong>body</strong>: <code>&#39;Work Sans&#39;</code> · <code>&#39;Inter&#39;</code> · <code>&#39;Source Sans 3&#39;</code> wght 400</li><li><strong>mono</strong>: <code>&#39;JetBrains Mono&#39;</code> · <code>&#39;IBM Plex Mono&#39;</code> wght 400</li></ul>
+<p class="ds-prose">Mono is declared for completeness; soft-editorial does not use monospace in any component — labels are sans or italic serif. If brand DNA forces a mono, demote it to a single technical caption use.</p></div>
+  </details>
+</section>
+
+<section id="motion" class="ds-section">
+  <div class="eyebrow">§4 · Motion (preset)</div>
+  <h2>Soft Editorial motion language</h2>
+  <div class="ds-prose-block"><p class="ds-prose">A warm small-press literary quarterly. Cream paper field, Cormorant Garamond carrying every headline and ornamental moment, Work Sans receding into body. Generous rounded cards (24–36px radius) float as translucent white over the cream — depth is implied by translucency and form, never by shadow.</p>
+<p class="ds-prose"><strong>Typographic signal: mixed weight inside the headline.</strong> A serif headline at weight 500 carries an <code>&lt;em&gt;</code> that drops to weight 400 italic — the italic phrase is a _lighter_ weight of the same family. The weight drop is a softening, not bold emphasis. This is opposite the magazine convention of italic-for-bold; here italic is the more intimate tone.</p>
+<p class="ds-prose"><strong>Color philosophy: cream plus five pastels.</strong> The cream paper field (<code>--paper-anchor</code>, a warm aged cream) is the constant under every surface — pastels appear only as card fills, never as the slide background. Pastel slots are interchangeable card paints: none carries a fixed semantic role outside matrix layouts. Text stays in <code>--ink</code> on every surface — soft-editorial never inverts to white on pastel.</p>
+<p class="ds-prose">Motion is unhurried: soft <code>power2.out</code> arrivals, no overshoot, no bounce. Stagger budgets stretch toward the editorial upper band (200–280ms between siblings); even snap durations are slow by other-preset standards. Class prefix: <code>se-</code>.</p></div>
+  <details class="ds-paste-ready">
+    <summary class="ds-summary">▸ Paste-ready source → <code>chunks/easings.js</code> (paste at top of every scene's <code>&lt;script&gt;</code>)</summary>
+    <pre class="ds-code"><!-- MOTION-START -->
+const EASE = {
+  entry: &quot;power2.out&quot;, // soft arrival, no overshoot — &quot;considered, unhurried&quot;
+  emphasis: &quot;power2.inOut&quot;, // gentle inflection on emphasis beats
+  exit: &quot;power2.in&quot;, // gentle dismissal
+  drift: &quot;sine.inOut&quot;, // ambient breath on translucent cards
+};
+const DUR = {
+  snap: 0.18, // even &quot;fast&quot; is unhurried — upper-band snap
+  med: 0.5,
+  slow: 1.0,
+};
+// RULE: no overshoot anywhere. back.out / elastic / bounce break the editorial calm.
+// RULE: italic-em phrases inside a headline fade in *after* the roman headline lands
+//       (DUR.snap delay) — the weight drop is a softening, not an entry beat.
+// RULE: drop caps enter on a separate beat from their paragraph (DUR.med delay)
+//       so the 132px serif glyph reads as a deliberate ornament, not a stutter.
+// RULE: pastel card fills cross-fade between scenes, never hard-cut. Color is a
+//       slow tonal shift, not a flash.
+// RULE: roman-numeral step ordinals (i. ii. iii.) tween linearly on counter reveals.
+//       Eased numerals read as &quot;animated&quot; not &quot;printed&quot;.
+<!-- MOTION-END --></pre>
+  </details>
+</section>
+
+<section id="voice" class="ds-section">
+  <div class="eyebrow">§5 · Voice (site × style transform)</div>
+  <h2>How to write on-screen copy in Soft Editorial register</h2>
+
+  <div class="voice-grid">
+    <div>
+      <h3 class="ds-h3">From the site (DNA)</h3>
+      <dl class="voice-dl">
+        <dt>Tone</dt><dd>warm</dd>
+        <dt>Heading style</dt><dd>Sentence case</dd>
+        
+        
+      </dl>
+    </div>
+    <div>
+      <h3 class="ds-h3">Transform recipe (preset §G)</h3>
+      <div class="ds-prose-block"><p class="ds-prose">Take the brand&#39;s product description / value prop. Transform with:</p>
+<p class="ds-prose">1. Keep complete sentences. Sentence case throughout — soft-editorial reads<br>   UPPERCASE as shouting, so on-screen text stays sentence case everywhere.<br>2. Prefer one warm noun phrase over a list of features. The mood is &quot;essayist&#39;s<br>   summary&quot;, not &quot;product spec&quot;.<br>3. Drop hyperbole and superlatives (<code>best</code>, <code>most</code>, <code>revolutionary</code>). Replace with<br>   measured adjectives (<code>considered</code>, <code>quiet</code>, <code>careful</code>).<br>4. Use italic <code>&lt;em&gt;</code> inside a headline to highlight a single warm phrase — usually<br>   2–4 words mid-sentence. The italic is the system&#39;s emphasis.<br>5. End scenes with a quiet declarative — no exclamation, no question mark.<br>6. Cite proofs (years, customers, awards) as factual asides in italic serif at<br>   marker size, not as boastful pull-out stats.</p>
+<p class="ds-prose"><strong>Example:</strong></p>
+<ul class="ds-list"><li>IN: <code>Figma helps teams design products collaboratively in real time</code></li><li>OUT: <code>A canvas where teams design &lt;em&gt;together&lt;/em&gt;, in real time. — Trusted by four million, quietly.</code></li></ul></div>
+    </div>
+  </div>
+
+  <h3 class="ds-h3" style="margin-top: 32px;">Try it on this site's voice</h3>
+  
+  <div class="voice-pair">
+    <div class="voice-in"><span class="voice-tag">IN (site)</span> Orthodox synagogue and vibrant Jewish community in Cherry Hill, NJ — welcoming young families with affordable housing, excellent Jewish schools, Torah learning, and warm community life</div>
+    <div class="voice-out"><span class="voice-tag">OUT (Phase 4b applies recipe to DOM copy)</span> <em>worker writes register-shaped HTML text</em></div>
+  </div>
+
+  <details class="ds-paste-ready" style="margin-top: 32px;">
+    <summary class="ds-summary">▸ Paste-ready source → <code>chunks/voice.md</code> (Phase 4b applies recipe to DOM text)</summary>
+    <pre class="ds-code"><!-- VOICE-START -->
+# Voice register: soft-editorial
+
+## From the site (DNA)
+- Tone: warm
+- Heading style: Sentence case
+
+## Transform recipe
+
+Take the brand&#39;s product description / value prop. Transform with:
+
+1. Keep complete sentences. Sentence case throughout — soft-editorial reads
+   UPPERCASE as shouting, so on-screen text stays sentence case everywhere.
+2. Prefer one warm noun phrase over a list of features. The mood is &quot;essayist&#39;s
+   summary&quot;, not &quot;product spec&quot;.
+3. Drop hyperbole and superlatives (`best`, `most`, `revolutionary`). Replace with
+   measured adjectives (`considered`, `quiet`, `careful`).
+4. Use italic `&lt;em&gt;` inside a headline to highlight a single warm phrase — usually
+   2–4 words mid-sentence. The italic is the system&#39;s emphasis.
+5. End scenes with a quiet declarative — no exclamation, no question mark.
+6. Cite proofs (years, customers, awards) as factual asides in italic serif at
+   marker size, not as boastful pull-out stats.
+
+**Example:**
+
+- IN: `Figma helps teams design products collaboratively in real time`
+- OUT: `A canvas where teams design &lt;em&gt;together&lt;/em&gt;, in real time. — Trusted by four million, quietly.`
+
+&gt; Phase 4b scene workers: apply to DOM text only (headline / chip / button copy).
+&gt; Phase 2 narrator scripts are TTS-bound — do NOT uppercase or strip articles.
+<!-- VOICE-END --></pre>
+  </details>
+</section>
+
+<section id="hints" class="ds-section">
+  <div class="eyebrow">§H · Scene composition hints (plan agent reads these)</div>
+  <h2>Soft Editorial composition rules</h2>
+  <p class="ds-prose">Surface contracts, material composition rules, brand-color placement — anything that constrains <strong>which</strong> components a Phase 3 plan can mix in a single scene.</p>
+  <div class="ds-prose-block"><p class="ds-prose"><strong>Surface &amp; elevation</strong></p>
+<p class="ds-prose">- Slide background is always cream — <code>var(--brand-canvas, var(--paper-anchor))</code>.<br>  Pastel fills appear only as card fills, never as a slide background. The single<br>  exception is a full-bleed closer scene (one per video at most) that may fill with<br>  <code>var(--brand-primary)</code> for a single quiet &quot;moment&quot;.<br>- Default card fill is <code>var(--surface-card)</code> (translucent white at 55%). The cream<br>  bleeds through and _is_ the depth signal — no shadow, no border. Reach for a<br>  pastel fill (any of <code>--brand-primary</code> / <code>--brand-secondary</code> / <code>--brand-accent</code>)<br>  only when a card needs color or status.<br>- No drop shadows. No glow. No blur halos. Depth comes from translucency and the<br>  generous rounded form.<br>- Cards never stack on cards. If a layout needs visual hierarchy, use size and<br>  color — never z-stacking.</p>
+<p class="ds-prose"><strong>Brand color placement (role contract)</strong></p>
+<p class="ds-prose">- All three brand colors are interchangeable card fills — soft-editorial does not<br>  assign a fixed <code>primary→hero</code> role. The brand-primary is the warmest moment, the<br>  brand-secondary is the brightest, the brand-accent is the most neutral; but any<br>  scene may rotate them as needed. The system&#39;s voice is &quot;we have a palette of<br>  pastels&quot;, not &quot;we have a hero color&quot;.<br>- <strong>Text stays in <code>var(--ink)</code> on every surface, including all pastel cards.</strong><br>  Never invert to white on pastel. This is non-negotiable — inverted text breaks<br>  the editorial calm.<br>- Two-color limit per scene: at most two of the three brand colors visible at<br>  once. Three brand colors on one scene reads as a color-wheel demo, not as<br>  composition.</p>
+<p class="ds-prose"><strong>Typography discipline</strong></p>
+<p class="ds-prose">- One typeface family per headline. Mix weight (500 → 400) and style (roman →<br>  italic) inside the headline, not faces. Italic <code>&lt;em&gt;</code> is the system&#39;s emphasis.<br>- <strong>Left-align by default</strong>, ragged right. Centered headlines are reserved for<br>  the full-bleed closer and the pull-quote — the system&#39;s two &quot;moment&quot; scenes.<br>- Drop caps appear at most once per scene, only on long-form opener paragraphs<br>  (132px Cormorant Garamond medium, line-height 0.85). A scene with two drop caps<br>  is broken.<br>- Roman-numeral step ordinals (<code>i.</code>, <code>ii.</code>, <code>iii.</code>, <code>iv.</code>, <code>v.</code>) — lowercase<br>  italic serif. Arabic step numbers break the editorial register.<br>- Sentence case everywhere. Soft-editorial has no uppercase element — uppercase<br>  reads as shouting against the Cormorant serif calm.</p>
+<p class="ds-prose"><strong>Layout &amp; density</strong></p>
+<p class="ds-prose">- Card grids: 28–36px gaps between cards, 80px outer slide padding. The cream<br>  field around and between cards is load-bearing — a layout that crowds cards<br>  edge-to-edge reads as broken.<br>- Two strong things per scene maximum. Hierarchy through size and surface color,<br>  not stacking.<br>- Card body density inside cards may be medium-high (matrices, dense step grids,<br>  lengthy quoted text) — the cream-field margin between cards carries the<br>  breathing.</p>
+<p class="ds-prose"><strong>Transitions between scenes</strong></p>
+<p class="ds-prose">- Default: 400–600ms crossfade with 16–24px upward drift on incoming cards.<br>- Hold cream as the background across the cut — the cards swap, the field is<br>  constant. The cream field is the deck&#39;s &quot;spine&quot;.<br>- The full-bleed closer scene fades _to_ full-pastel from cream, holds for the<br>  closer&#39;s duration, fades back to cream on exit.</p></div>
+  <details class="ds-paste-ready">
+    <summary class="ds-summary">▸ Paste-ready source → <code>chunks/composition-hints.md</code> (plan agent reads this)</summary>
+    <pre class="ds-code"><!-- HINTS-START -->
+# Composition hints — Soft Editorial
+
+**Surface &amp; elevation**
+
+- Slide background is always cream — `var(--brand-canvas, var(--paper-anchor))`.
+  Pastel fills appear only as card fills, never as a slide background. The single
+  exception is a full-bleed closer scene (one per video at most) that may fill with
+  `var(--brand-primary)` for a single quiet &quot;moment&quot;.
+- Default card fill is `var(--surface-card)` (translucent white at 55%). The cream
+  bleeds through and _is_ the depth signal — no shadow, no border. Reach for a
+  pastel fill (any of `--brand-primary` / `--brand-secondary` / `--brand-accent`)
+  only when a card needs color or status.
+- No drop shadows. No glow. No blur halos. Depth comes from translucency and the
+  generous rounded form.
+- Cards never stack on cards. If a layout needs visual hierarchy, use size and
+  color — never z-stacking.
+
+**Brand color placement (role contract)**
+
+- All three brand colors are interchangeable card fills — soft-editorial does not
+  assign a fixed `primary→hero` role. The brand-primary is the warmest moment, the
+  brand-secondary is the brightest, the brand-accent is the most neutral; but any
+  scene may rotate them as needed. The system&#39;s voice is &quot;we have a palette of
+  pastels&quot;, not &quot;we have a hero color&quot;.
+- **Text stays in `var(--ink)` on every surface, including all pastel cards.**
+  Never invert to white on pastel. This is non-negotiable — inverted text breaks
+  the editorial calm.
+- Two-color limit per scene: at most two of the three brand colors visible at
+  once. Three brand colors on one scene reads as a color-wheel demo, not as
+  composition.
+
+**Typography discipline**
+
+- One typeface family per headline. Mix weight (500 → 400) and style (roman →
+  italic) inside the headline, not faces. Italic `&lt;em&gt;` is the system&#39;s emphasis.
+- **Left-align by default**, ragged right. Centered headlines are reserved for
+  the full-bleed closer and the pull-quote — the system&#39;s two &quot;moment&quot; scenes.
+- Drop caps appear at most once per scene, only on long-form opener paragraphs
+  (132px Cormorant Garamond medium, line-height 0.85). A scene with two drop caps
+  is broken.
+- Roman-numeral step ordinals (`i.`, `ii.`, `iii.`, `iv.`, `v.`) — lowercase
+  italic serif. Arabic step numbers break the editorial register.
+- Sentence case everywhere. Soft-editorial has no uppercase element — uppercase
+  reads as shouting against the Cormorant serif calm.
+
+**Layout &amp; density**
+
+- Card grids: 28–36px gaps between cards, 80px outer slide padding. The cream
+  field around and between cards is load-bearing — a layout that crowds cards
+  edge-to-edge reads as broken.
+- Two strong things per scene maximum. Hierarchy through size and surface color,
+  not stacking.
+- Card body density inside cards may be medium-high (matrices, dense step grids,
+  lengthy quoted text) — the cream-field margin between cards carries the
+  breathing.
+
+**Transitions between scenes**
+
+- Default: 400–600ms crossfade with 16–24px upward drift on incoming cards.
+- Hold cream as the background across the cut — the cards swap, the field is
+  constant. The cream field is the deck&#39;s &quot;spine&quot;.
+- The full-bleed closer scene fades _to_ full-pastel from cream, holds for the
+  closer&#39;s duration, fades back to cream on exit.
+<!-- HINTS-END --></pre>
+  </details>
+</section>
+
+<section id="components" class="ds-section">
+  <div class="eyebrow">§6 · Components (paste-ready)</div>
+  <h2>Soft Editorial component library</h2>
+
+  
+  <div class="comp-card">
+    <div class="comp-head">
+      <span class="comp-name">action-bar</span>
+      <span class="comp-marker">&lt;!-- COMPONENT: action-bar --&gt;</span>
+    </div>
+    <div class="comp-preview preset-native-scope">
+      <style>
+  /* Lemon-yellow callout band (24px rounded card) running across the top of a
+     content slide — soft-editorial's "loud" moment, much quieter than a
+     conventional CTA bar. A tag separator (italic serif) sits left of a serif
+     headline with a 1px ink hairline between them. Defaults to brand-secondary
+     fill so the brightest pastel carries the band; swap if brand DNA flips
+     the warmest/brightest mapping. */
+  .se-action {
+    background: var(--brand-secondary);
+    border-radius: var(--radius-card-sm);
+    padding: 24px 36px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: var(--ink);
+  }
+  .se-action-tag {
+    font-family: var(--font-display, "Cormorant Garamond", serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(26px, 1.8vw, 32px);
+    line-height: 1.2;
+    color: var(--ink);
+    flex-shrink: 0;
+    border-right: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+    padding-right: 24px;
+  }
+  .se-action-headline {
+    font-family: var(--font-display, "Cormorant Garamond", serif);
+    font-weight: 500;
+    font-size: clamp(34px, 2.8vw, 48px);
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+    margin: 0;
+    color: var(--ink);
+  }
+  .se-action-headline em {
+    font-weight: 400;
+    font-style: italic;
+  }
+</style>
+      <div class="se-action">
+  <div class="se-action-tag">Issue 01</div>
+  <h2 class="se-action-headline">capture</h2>
+</div>
+    </div>
+    <details>
+      <summary class="ds-summary">Source</summary>
+      <pre class="ds-code">&lt;!-- COMPONENT: action-bar --&gt;
+```html
+&lt;div class=&quot;se-action&quot;&gt;
+  &lt;div class=&quot;se-action-tag&quot;&gt;{KICKER}&lt;/div&gt;
+  &lt;h2 class=&quot;se-action-headline&quot;&gt;{HEADLINE}&lt;/h2&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  /* Lemon-yellow callout band (24px rounded card) running across the top of a
+     content slide — soft-editorial&#39;s &quot;loud&quot; moment, much quieter than a
+     conventional CTA bar. A tag separator (italic serif) sits left of a serif
+     headline with a 1px ink hairline between them. Defaults to brand-secondary
+     fill so the brightest pastel carries the band; swap if brand DNA flips
+     the warmest/brightest mapping. */
+  .se-action {
+    background: var(--brand-secondary);
+    border-radius: var(--radius-card-sm);
+    padding: 24px 36px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: var(--ink);
+  }
+  .se-action-tag {
+    font-family: var(--font-display, &quot;Cormorant Garamond&quot;, serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(26px, 1.8vw, 32px);
+    line-height: 1.2;
+    color: var(--ink);
+    flex-shrink: 0;
+    border-right: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+    padding-right: 24px;
+  }
+  .se-action-headline {
+    font-family: var(--font-display, &quot;Cormorant Garamond&quot;, serif);
+    font-weight: 500;
+    font-size: clamp(34px, 2.8vw, 48px);
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+    margin: 0;
+    color: var(--ink);
+  }
+  .se-action-headline em {
+    font-weight: 400;
+    font-style: italic;
+  }
+&lt;/style&gt;
+```
+&lt;!-- /COMPONENT --&gt;</pre>
+    </details>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head">
+      <span class="comp-name">button</span>
+      <span class="comp-marker">&lt;!-- COMPONENT: button --&gt;</span>
+    </div>
+    <div class="comp-preview preset-native-scope">
+      <style>
+  /* Subtle text-link button — Cormorant Garamond italic, dashed-underline on
+     hover, no fill, no border, no shadow. Soft-editorial does not commit to a
+     "loud" CTA — the action is a quiet invitation, not a sales pitch.
+     For a stronger CTA, use the action-bar component instead. */
+  .se-button {
+    background: transparent;
+    color: var(--ink);
+    border: none;
+    border-bottom: 1.5px dashed color-mix(in srgb, var(--ink) 35%, transparent);
+    padding: 8px 0;
+    font-family: var(--font-display, "Cormorant Garamond", serif);
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(26px, 1.8vw, 32px);
+    line-height: 1.2;
+    cursor: pointer;
+    letter-spacing: -0.005em;
+  }
+  .se-button:hover {
+    border-bottom-color: var(--brand-primary);
+  }
+  .se-button-arrow {
+    display: inline-block;
+    margin-left: 10px;
+    font-style: normal;
+    transition: transform 0.5s ease;
+  }
+  .se-button:hover .se-button-arrow {
+    transform: translateX(6px);
+  }
+</style>
+      <button class="se-button">Get started <span class="se-button-arrow">→</span></button>
+    </div>
+    <details>
+      <summary class="ds-summary">Source</summary>
+      <pre class="ds-code">&lt;!-- COMPONENT: button --&gt;
+```html
+&lt;button class=&quot;se-button&quot;&gt;{LABEL} &lt;span class=&quot;se-button-arrow&quot;&gt;→&lt;/span&gt;&lt;/button&gt;
+&lt;style&gt;
+  /* Subtle text-link button — Cormorant Garamond italic, dashed-underline on
+     hover, no fill, no border, no shadow. Soft-editorial does not commit to a
+     &quot;loud&quot; CTA — the action is a quiet invitation, not a sales pitch.
+     For a stronger CTA, use the action-bar component instead. */
+  .se-button {
+    background: transparent;
+    color: var(--ink);
+    border: none;
+    border-bottom: 1.5px dashed color-mix(in srgb, var(--ink) 35%, transparent);
+    padding: 8px 0;
+    font-family: var(--font-display, &quot;Cormorant Garamond&quot;, serif);
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(26px, 1.8vw, 32px);
+    line-height: 1.2;
+    cursor: pointer;
+    letter-spacing: -0.005em;
+  }
+  .se-button:hover {
+    border-bottom-color: var(--brand-primary);
+  }
+  .se-button-arrow {
+    display: inline-block;
+    margin-left: 10px;
+    font-style: normal;
+    transition: transform 0.5s ease;
+  }
+  .se-button:hover .se-button-arrow {
+    transform: translateX(6px);
+  }
+&lt;/style&gt;
+```
+&lt;!-- /COMPONENT --&gt;</pre>
+    </details>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head">
+      <span class="comp-name">chip</span>
+      <span class="comp-marker">&lt;!-- COMPONENT: chip --&gt;</span>
+    </div>
+    <div class="comp-preview preset-native-scope">
+      <style>
+  /* Status pill — fully rounded (999px), pastel-filled or translucent white.
+     Default fills with brand-primary; flip to brand-secondary / brand-accent /
+     translucent for variant statuses. Text stays in ink on every fill —
+     soft-editorial never inverts to white on pastel. */
+  .se-chip {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    background: var(--brand-primary);
+    color: var(--ink);
+    font-family: var(--font-body, "Work Sans", sans-serif);
+    font-weight: 500;
+    font-size: clamp(24px, 1.5vw, 28px);
+    line-height: 1.3;
+    letter-spacing: 0;
+  }
+  /* "Note" variant — translucent white with a low-opacity ink hairline,
+     for soft annotations that aren't carrying status. Apply with .se-chip-note. */
+  .se-chip-note {
+    background: var(--surface-card);
+    border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+    font-style: italic;
+    font-family: var(--font-display, "Cormorant Garamond", serif);
+    font-weight: 400;
+    color: color-mix(in srgb, var(--ink) 70%, transparent);
+  }
+</style>
+      <span class="se-chip">Get started</span>
+    </div>
+    <details>
+      <summary class="ds-summary">Source</summary>
+      <pre class="ds-code">&lt;!-- COMPONENT: chip --&gt;
+```html
+&lt;span class=&quot;se-chip&quot;&gt;{LABEL}&lt;/span&gt;
+&lt;style&gt;
+  /* Status pill — fully rounded (999px), pastel-filled or translucent white.
+     Default fills with brand-primary; flip to brand-secondary / brand-accent /
+     translucent for variant statuses. Text stays in ink on every fill —
+     soft-editorial never inverts to white on pastel. */
+  .se-chip {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    background: var(--brand-primary);
+    color: var(--ink);
+    font-family: var(--font-body, &quot;Work Sans&quot;, sans-serif);
+    font-weight: 500;
+    font-size: clamp(24px, 1.5vw, 28px);
+    line-height: 1.3;
+    letter-spacing: 0;
+  }
+  /* &quot;Note&quot; variant — translucent white with a low-opacity ink hairline,
+     for soft annotations that aren&#39;t carrying status. Apply with .se-chip-note. */
+  .se-chip-note {
+    background: var(--surface-card);
+    border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+    font-style: italic;
+    font-family: var(--font-display, &quot;Cormorant Garamond&quot;, serif);
+    font-weight: 400;
+    color: color-mix(in srgb, var(--ink) 70%, transparent);
+  }
+&lt;/style&gt;
+```
+&lt;!-- /COMPONENT --&gt;</pre>
+    </details>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head">
+      <span class="comp-name">color-card</span>
+      <span class="comp-marker">&lt;!-- COMPONENT: color-card --&gt;</span>
+    </div>
+    <div class="comp-preview preset-native-scope">
+      <style>
+  /* Saturated pastel card — pink/lemon/blush/sage/lilac fill in the source
+     template. Here the fill rotates across the three brand colors; assign
+     brand-secondary or brand-accent for variety in a card-grid scene.
+     Text stays in ink on every pastel fill — never inverted. */
+  .se-color-card {
+    background: var(--brand-primary);
+    border-radius: var(--radius-card-lg);
+    padding: 64px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    color: var(--ink);
+    text-align: center;
+    align-items: center;
+  }
+  .se-color-card-head {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .se-color-card-headline {
+    font-family: var(--font-display, "Cormorant Garamond", serif);
+    font-weight: 500;
+    font-size: clamp(44px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .se-color-card-headline em {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .se-color-card-sub {
+    font-family: var(--font-body, "Work Sans", sans-serif);
+    font-weight: 500;
+    font-size: clamp(28px, 2vw, 34px);
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .se-color-card-body {
+    font-family: var(--font-body, "Work Sans", sans-serif);
+    font-weight: 400;
+    font-size: clamp(24px, 1.5vw, 28px);
+    line-height: 1.45;
+    max-width: 26ch;
+    color: var(--ink);
+    margin: 0;
+  }
+</style>
+      <div class="se-color-card">
+  <div class="se-color-card-head">
+    <h3 class="se-color-card-headline">capture</h3>
+    <div class="se-color-card-sub">Stamped. Signed. Framed.</div>
+  </div>
+  <p class="se-color-card-body">Two lines max. One idea.</p>
+</div>
+    </div>
+    <details>
+      <summary class="ds-summary">Source</summary>
+      <pre class="ds-code">&lt;!-- COMPONENT: color-card --&gt;
+```html
+&lt;div class=&quot;se-color-card&quot;&gt;
+  &lt;div class=&quot;se-color-card-head&quot;&gt;
+    &lt;h3 class=&quot;se-color-card-headline&quot;&gt;{HEADLINE}&lt;/h3&gt;
+    &lt;div class=&quot;se-color-card-sub&quot;&gt;{SUBHEAD}&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p class=&quot;se-color-card-body&quot;&gt;{LEDE}&lt;/p&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  /* Saturated pastel card — pink/lemon/blush/sage/lilac fill in the source
+     template. Here the fill rotates across the three brand colors; assign
+     brand-secondary or brand-accent for variety in a card-grid scene.
+     Text stays in ink on every pastel fill — never inverted. */
+  .se-color-card {
+    background: var(--brand-primary);
+    border-radius: var(--radius-card-lg);
+    padding: 64px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    color: var(--ink);
+    text-align: center;
+    align-items: center;
+  }
+  .se-color-card-head {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .se-color-card-headline {
+    font-family: var(--font-display, &quot;Cormorant Garamond&quot;, serif);
+    font-weight: 500;
+    font-size: clamp(44px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .se-color-card-headline em {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .se-color-card-sub {
+    font-family: var(--font-body, &quot;Work Sans&quot;, sans-serif);
+    font-weight: 500;
+    font-size: clamp(28px, 2vw, 34px);
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .se-color-card-body {
+    font-family: var(--font-body, &quot;Work Sans&quot;, sans-serif);
+    font-weight: 400;
+    font-size: clamp(24px, 1.5vw, 28px);
+    line-height: 1.45;
+    max-width: 26ch;
+    color: var(--ink);
+    margin: 0;
+  }
+&lt;/style&gt;
+```
+&lt;!-- /COMPONENT --&gt;</pre>
+    </details>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head">
+      <span class="comp-name">dashed-rule</span>
+      <span class="comp-marker">&lt;!-- COMPONENT: dashed-rule --&gt;</span>
+    </div>
+    <div class="comp-preview preset-native-scope">
+      <style>
+  /* Soft-editorial's signature divider — 1px DASHED warm ink at low opacity.
+     Used inside cards (matrix dividers, column rules, source-line markers) and
+     between major sections of a scene. The dashed treatment is the notebook-
+     margin feel — solid hairlines belong to the Swiss/editorial preset, not
+     here. For a heavier divider (head-row underlines, primary column rules),
+     swap class to .se-dashed-rule-solid which uses --rule-solid (1.5px solid). */
+  .se-dashed-rule {
+    border: none;
+    border-top: var(--rule-dashed);
+    margin: var(--gap-cards) 0;
+    height: 0;
+  }
+  .se-dashed-rule-solid {
+    border: none;
+    border-top: var(--rule-solid);
+    margin: var(--gap-cards) 0;
+    height: 0;
+  }
+</style>
+      <hr class="se-dashed-rule" />
+    </div>
+    <details>
+      <summary class="ds-summary">Source</summary>
+      <pre class="ds-code">&lt;!-- COMPONENT: dashed-rule --&gt;
+```html
+&lt;hr class=&quot;se-dashed-rule&quot; /&gt;
+&lt;style&gt;
+  /* Soft-editorial&#39;s signature divider — 1px DASHED warm ink at low opacity.
+     Used inside cards (matrix dividers, column rules, source-line markers) and
+     between major sections of a scene. The dashed treatment is the notebook-
+     margin feel — solid hairlines belong to the Swiss/editorial preset, not
+     here. For a heavier divider (head-row underlines, primary column rules),
+     swap class to .se-dashed-rule-solid which uses --rule-solid (1.5px solid). */
+  .se-dashed-rule {
+    border: none;
+    border-top: var(--rule-dashed);
+    margin: var(--gap-cards) 0;
+    height: 0;
+  }
+  .se-dashed-rule-solid {
+    border: none;
+    border-top: var(--rule-solid);
+    margin: var(--gap-cards) 0;
+    height: 0;
+  }
+&lt;/style&gt;
+```
+&lt;!-- /COMPONENT --&gt;</pre>
+    </details>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head">
+      <span class="comp-name">drop-cap</span>
+      <span class="comp-marker">&lt;!-- COMPONENT: drop-cap --&gt;</span>
+    </div>
+    <div class="comp-preview preset-native-scope">
+      <style>
+  .se-dropcap {
+    font-family: var(--font-body, "Work Sans", sans-serif);
+    font-size: clamp(24px, 1.8vw, 30px);
+    line-height: 1.5;
+    max-width: var(--measure-body);
+    color: var(--ink);
+    margin: 0;
+  }
+  .se-dropcap-letter {
+    float: left;
+    font-family: var(--font-display, "Cormorant Garamond", serif);
+    font-weight: 500;
+    font-size: 5.4em; /* ~130px against a 24px body */
+    line-height: 0.85;
+    padding: 8px 14px 0 0;
+    color: var(--ink);
+  }
+</style>
+      <!-- Drop cap — first letter of an opener paragraph floats left at 132px Cormorant
+     Garamond medium, line-height 0.85, padding 8px 14px 0 0. The single most
+     editorial typographic moment in the system. Use at most once per scene,
+     only on long-form opener paragraphs. -->
+<p class="se-dropcap">
+  <span class="se-dropcap-letter">A</span>
+  Two lines max. One idea.
+</p>
+    </div>
+    <details>
+      <summary class="ds-summary">Source</summary>
+      <pre class="ds-code">&lt;!-- COMPONENT: drop-cap --&gt;
+```html
+&lt;!-- Drop cap — first letter of an opener paragraph floats left at 132px Cormorant
+     Garamond medium, line-height 0.85, padding 8px 14px 0 0. The single most
+     editorial typographic moment in the system. Use at most once per scene,
+     only on long-form opener paragraphs. --&gt;
+&lt;p class=&quot;se-dropcap&quot;&gt;
+  &lt;span class=&quot;se-dropcap-letter&quot;&gt;A&lt;/span&gt;
+  {LEDE}
+&lt;/p&gt;
+&lt;style&gt;
+  .se-dropcap {
+    font-family: var(--font-body, &quot;Work Sans&quot;, sans-serif);
+    font-size: clamp(24px, 1.8vw, 30px);
+    line-height: 1.5;
+    max-width: var(--measure-body);
+    color: var(--ink);
+    margin: 0;
+  }
+  .se-dropcap-letter {
+    float: left;
+    font-family: var(--font-display, &quot;Cormorant Garamond&quot;, serif);
+    font-weight: 500;
+    font-size: 5.4em; /* ~130px against a 24px body */
+    line-height: 0.85;
+    padding: 8px 14px 0 0;
+    color: var(--ink);
+  }
+&lt;/style&gt;
+```
+&lt;!-- /COMPONENT --&gt;</pre>
+    </details>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head">
+      <span class="comp-name">hero</span>
+      <span class="comp-marker">&lt;!-- COMPONENT: hero --&gt;</span>
+    </div>
+    <div class="comp-preview preset-native-scope">
+      <style>
+  /* Cover hero — Cormorant Garamond display headline, italic kicker above,
+     supporting lede beneath, and a row of three pastel swatch discs in the
+     top-right corner. The swatch row is the system's identity mark. */
+  .se-hero {
+    position: relative;
+    padding: var(--gap-outer) 0;
+    max-width: var(--measure-display);
+  }
+  .se-hero-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  .se-hero-kicker {
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(28px, 2.2vw, 40px);
+    line-height: 1.2;
+    color: color-mix(in srgb, var(--ink) 65%, transparent);
+  }
+  .se-hero-display {
+    font-weight: 500;
+    font-size: clamp(120px, 12vw, 232px);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .se-hero-display em {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .se-hero-lede {
+    font-family: var(--font-body, "Work Sans", sans-serif);
+    font-size: clamp(26px, 1.8vw, 32px);
+    line-height: 1.45;
+    max-width: var(--measure-body);
+    color: color-mix(in srgb, var(--ink) 70%, transparent);
+    margin: 0;
+  }
+  /* Swatch row — three pastel discs in the top-right of the cover.
+     Rotates the three brand colors as paint chips, never as semantic roles. */
+  .se-hero-swatches {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    gap: 14px;
+  }
+  .se-hero-dot {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-pill);
+    display: block;
+  }
+  .se-hero-dot-1 {
+    background: var(--brand-primary);
+  }
+  .se-hero-dot-2 {
+    background: var(--brand-secondary);
+  }
+  .se-hero-dot-3 {
+    background: var(--brand-accent);
+  }
+</style>
+      <div class="se-hero">
+  <div class="se-hero-swatches" aria-hidden="true">
+    <i class="se-hero-dot se-hero-dot-1"></i>
+    <i class="se-hero-dot se-hero-dot-2"></i>
+    <i class="se-hero-dot se-hero-dot-3"></i>
+  </div>
+  <div class="se-hero-stack">
+    <span class="se-hero-kicker">Issue 01</span>
+    <h1 class="se-hero-display">capture</h1>
+    <p class="se-hero-lede">Two lines max. One idea.</p>
+  </div>
+</div>
+    </div>
+    <details>
+      <summary class="ds-summary">Source</summary>
+      <pre class="ds-code">&lt;!-- COMPONENT: hero --&gt;
+```html
+&lt;div class=&quot;se-hero&quot;&gt;
+  &lt;div class=&quot;se-hero-swatches&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;i class=&quot;se-hero-dot se-hero-dot-1&quot;&gt;&lt;/i&gt;
+    &lt;i class=&quot;se-hero-dot se-hero-dot-2&quot;&gt;&lt;/i&gt;
+    &lt;i class=&quot;se-hero-dot se-hero-dot-3&quot;&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;se-hero-stack&quot;&gt;
+    &lt;span class=&quot;se-hero-kicker&quot;&gt;{KICKER}&lt;/span&gt;
+    &lt;h1 class=&quot;se-hero-display&quot;&gt;{HEADLINE}&lt;/h1&gt;
+    &lt;p class=&quot;se-hero-lede&quot;&gt;{LEDE}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  /* Cover hero — Cormorant Garamond display headline, italic kicker above,
+     supporting lede beneath, and a row of three pastel swatch discs in the
+     top-right corner. The swatch row is the system&#39;s identity mark. */
+  .se-hero {
+    position: relative;
+    padding: var(--gap-outer) 0;
+    max-width: var(--measure-display);
+  }
+  .se-hero-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  .se-hero-kicker {
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(28px, 2.2vw, 40px);
+    line-height: 1.2;
+    color: color-mix(in srgb, var(--ink) 65%, transparent);
+  }
+  .se-hero-display {
+    font-weight: 500;
+    font-size: clamp(120px, 12vw, 232px);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .se-hero-display em {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .se-hero-lede {
+    font-family: var(--font-body, &quot;Work Sans&quot;, sans-serif);
+    font-size: clamp(26px, 1.8vw, 32px);
+    line-height: 1.45;
+    max-width: var(--measure-body);
+    color: color-mix(in srgb, var(--ink) 70%, transparent);
+    margin: 0;
+  }
+  /* Swatch row — three pastel discs in the top-right of the cover.
+     Rotates the three brand colors as paint chips, never as semantic roles. */
+  .se-hero-swatches {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    gap: 14px;
+  }
+  .se-hero-dot {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-pill);
+    display: block;
+  }
+  .se-hero-dot-1 {
+    background: var(--brand-primary);
+  }
+  .se-hero-dot-2 {
+    background: var(--brand-secondary);
+  }
+  .se-hero-dot-3 {
+    background: var(--brand-accent);
+  }
+&lt;/style&gt;
+```
+&lt;!-- /COMPONENT --&gt;</pre>
+    </details>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head">
+      <span class="comp-name">pull-quote</span>
+      <span class="comp-marker">&lt;!-- COMPONENT: pull-quote --&gt;</span>
+    </div>
+    <div class="comp-preview preset-native-scope">
+      <style>
+  /* Pull-quote — large italic quote-mark in a pastel color above a centered
+     serif blockquote. The quote-mark color is its own signal — soft pastel,
+     never ink. Defaults to brand-secondary; if brand DNA puts the warmest
+     color on brand-primary, swap accordingly so the mark reads as a soft
+     decorative wash, not a high-contrast accent. */
+  .se-quote {
+    padding: 48px 0;
+    max-width: 28ch;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--ink);
+  }
+  .se-quote-mark {
+    font-family: var(--font-display, "Cormorant Garamond", serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(140px, 14vw, 220px);
+    line-height: 0.7;
+    color: var(--brand-secondary);
+    margin-bottom: 12px;
+  }
+  .se-quote-body {
+    font-family: var(--font-display, "Cormorant Garamond", serif);
+    font-weight: 500;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: var(--ink);
+  }
+  .se-quote-body em {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .se-quote-attr {
+    margin-top: 48px;
+    font-family: var(--font-body, "Work Sans", sans-serif);
+    font-weight: 500;
+    font-size: clamp(24px, 1.5vw, 28px);
+    line-height: 1.3;
+    color: var(--ink);
+  }
+</style>
+      <div class="se-quote">
+  <div class="se-quote-mark" aria-hidden="true">&ldquo;</div>
+  <blockquote class="se-quote-body">This changes how teams work.</blockquote>
+  <div class="se-quote-attr">Customer Quote</div>
+</div>
+    </div>
+    <details>
+      <summary class="ds-summary">Source</summary>
+      <pre class="ds-code">&lt;!-- COMPONENT: pull-quote --&gt;
+```html
+&lt;div class=&quot;se-quote&quot;&gt;
+  &lt;div class=&quot;se-quote-mark&quot; aria-hidden=&quot;true&quot;&gt;&amp;ldquo;&lt;/div&gt;
+  &lt;blockquote class=&quot;se-quote-body&quot;&gt;{QUOTE}&lt;/blockquote&gt;
+  &lt;div class=&quot;se-quote-attr&quot;&gt;{AUTHOR}&lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  /* Pull-quote — large italic quote-mark in a pastel color above a centered
+     serif blockquote. The quote-mark color is its own signal — soft pastel,
+     never ink. Defaults to brand-secondary; if brand DNA puts the warmest
+     color on brand-primary, swap accordingly so the mark reads as a soft
+     decorative wash, not a high-contrast accent. */
+  .se-quote {
+    padding: 48px 0;
+    max-width: 28ch;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--ink);
+  }
+  .se-quote-mark {
+    font-family: var(--font-display, &quot;Cormorant Garamond&quot;, serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(140px, 14vw, 220px);
+    line-height: 0.7;
+    color: var(--brand-secondary);
+    margin-bottom: 12px;
+  }
+  .se-quote-body {
+    font-family: var(--font-display, &quot;Cormorant Garamond&quot;, serif);
+    font-weight: 500;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: var(--ink);
+  }
+  .se-quote-body em {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .se-quote-attr {
+    margin-top: 48px;
+    font-family: var(--font-body, &quot;Work Sans&quot;, sans-serif);
+    font-weight: 500;
+    font-size: clamp(24px, 1.5vw, 28px);
+    line-height: 1.3;
+    color: var(--ink);
+  }
+&lt;/style&gt;
+```
+&lt;!-- /COMPONENT --&gt;</pre>
+    </details>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head">
+      <span class="comp-name">soft-card</span>
+      <span class="comp-marker">&lt;!-- COMPONENT: soft-card --&gt;</span>
+    </div>
+    <div class="comp-preview preset-native-scope">
+      <style>
+  /* Default container — translucent white card floating on the cream field.
+     The cream bleeds through the 0.55-opacity fill and signals "lifted" without
+     a shadow. Use this for any content that doesn't need pastel color.
+     Border-radius lives in the 24-36px band; soft-editorial has no square corners. */
+  .se-soft-card {
+    background: var(--surface-card);
+    border-radius: var(--radius-card-lg);
+    padding: 48px 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    color: var(--ink);
+  }
+  .se-soft-card-head {
+    font-family: var(--font-display, "Cormorant Garamond", serif);
+    font-weight: 500;
+    font-size: clamp(40px, 4vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .se-soft-card-head em {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .se-soft-card-body {
+    font-family: var(--font-body, "Work Sans", sans-serif);
+    font-weight: 400;
+    font-size: clamp(24px, 1.5vw, 28px);
+    line-height: 1.5;
+    color: color-mix(in srgb, var(--ink) 75%, transparent);
+    max-width: 36ch;
+    margin: 0;
+  }
+</style>
+      <div class="se-soft-card">
+  <h3 class="se-soft-card-head">capture</h3>
+  <p class="se-soft-card-body">Two lines max. One idea.</p>
+</div>
+    </div>
+    <details>
+      <summary class="ds-summary">Source</summary>
+      <pre class="ds-code">&lt;!-- COMPONENT: soft-card --&gt;
+```html
+&lt;div class=&quot;se-soft-card&quot;&gt;
+  &lt;h3 class=&quot;se-soft-card-head&quot;&gt;{HEADLINE}&lt;/h3&gt;
+  &lt;p class=&quot;se-soft-card-body&quot;&gt;{LEDE}&lt;/p&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  /* Default container — translucent white card floating on the cream field.
+     The cream bleeds through the 0.55-opacity fill and signals &quot;lifted&quot; without
+     a shadow. Use this for any content that doesn&#39;t need pastel color.
+     Border-radius lives in the 24-36px band; soft-editorial has no square corners. */
+  .se-soft-card {
+    background: var(--surface-card);
+    border-radius: var(--radius-card-lg);
+    padding: 48px 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    color: var(--ink);
+  }
+  .se-soft-card-head {
+    font-family: var(--font-display, &quot;Cormorant Garamond&quot;, serif);
+    font-weight: 500;
+    font-size: clamp(40px, 4vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .se-soft-card-head em {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .se-soft-card-body {
+    font-family: var(--font-body, &quot;Work Sans&quot;, sans-serif);
+    font-weight: 400;
+    font-size: clamp(24px, 1.5vw, 28px);
+    line-height: 1.5;
+    color: color-mix(in srgb, var(--ink) 75%, transparent);
+    max-width: 36ch;
+    margin: 0;
+  }
+&lt;/style&gt;
+```
+&lt;!-- /COMPONENT --&gt;</pre>
+    </details>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head">
+      <span class="comp-name">stat-counter</span>
+      <span class="comp-marker">&lt;!-- COMPONENT: stat-counter --&gt;</span>
+    </div>
+    <div class="comp-preview preset-native-scope">
+      <style>
+  /* Pastel-filled stat card with a Cormorant Garamond display numeral.
+     Defaults to brand-primary fill; swap to brand-secondary / brand-accent for
+     variety across a stat-grid scene. Text (numeral + label) stays in ink —
+     soft-editorial never inverts on pastel. The italic <em> drop applies to
+     the numeral fragment, e.g. "<em>4</em>M". */
+  .se-stat {
+    background: var(--brand-primary);
+    border-radius: var(--radius-card-lg);
+    padding: 42px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 280px;
+  }
+  .se-stat-num {
+    font-family: var(--font-display, "Cormorant Garamond", serif);
+    font-weight: 500;
+    font-size: clamp(96px, 13vw, 200px);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .se-stat-num em {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .se-stat-label {
+    font-family: var(--font-body, "Work Sans", sans-serif);
+    font-weight: 400;
+    font-size: clamp(24px, 1.5vw, 28px);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 28ch;
+  }
+</style>
+      <div class="se-stat">
+  <div class="se-stat-num">4M</div>
+  <div class="se-stat-label">Get started</div>
+</div>
+    </div>
+    <details>
+      <summary class="ds-summary">Source</summary>
+      <pre class="ds-code">&lt;!-- COMPONENT: stat-counter --&gt;
+```html
+&lt;div class=&quot;se-stat&quot;&gt;
+  &lt;div class=&quot;se-stat-num&quot;&gt;{NUM}&lt;/div&gt;
+  &lt;div class=&quot;se-stat-label&quot;&gt;{LABEL}&lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  /* Pastel-filled stat card with a Cormorant Garamond display numeral.
+     Defaults to brand-primary fill; swap to brand-secondary / brand-accent for
+     variety across a stat-grid scene. Text (numeral + label) stays in ink —
+     soft-editorial never inverts on pastel. The italic &lt;em&gt; drop applies to
+     the numeral fragment, e.g. &quot;&lt;em&gt;4&lt;/em&gt;M&quot;. */
+  .se-stat {
+    background: var(--brand-primary);
+    border-radius: var(--radius-card-lg);
+    padding: 42px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 280px;
+  }
+  .se-stat-num {
+    font-family: var(--font-display, &quot;Cormorant Garamond&quot;, serif);
+    font-weight: 500;
+    font-size: clamp(96px, 13vw, 200px);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .se-stat-num em {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .se-stat-label {
+    font-family: var(--font-body, &quot;Work Sans&quot;, sans-serif);
+    font-weight: 400;
+    font-size: clamp(24px, 1.5vw, 28px);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 28ch;
+  }
+&lt;/style&gt;
+```
+&lt;!-- /COMPONENT --&gt;</pre>
+    </details>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head">
+      <span class="comp-name">step-card</span>
+      <span class="comp-marker">&lt;!-- COMPONENT: step-card --&gt;</span>
+    </div>
+    <div class="comp-preview preset-native-scope">
+      <style>
+  /* Method / process step card. Defaults to translucent white; swap fill to
+     var(--brand-primary) / var(--brand-secondary) / var(--brand-accent) when
+     a beat needs color (one color per card, rotating across the row). */
+  .se-step {
+    background: var(--surface-card);
+    border-radius: 32px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    color: var(--ink);
+    min-height: 360px;
+  }
+  .se-step-num {
+    font-family: var(--font-display, "Cormorant Garamond", serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(56px, 6vw, 92px);
+    line-height: 0.9;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .se-step-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .se-step-head {
+    font-family: var(--font-display, "Cormorant Garamond", serif);
+    font-weight: 500;
+    font-size: clamp(28px, 2.8vw, 44px);
+    line-height: 1.05;
+    margin: 0;
+    color: var(--ink);
+  }
+  .se-step-head em {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .se-step-text {
+    font-family: var(--font-body, "Work Sans", sans-serif);
+    font-weight: 400;
+    font-size: clamp(24px, 1.5vw, 28px);
+    line-height: 1.45;
+    color: color-mix(in srgb, var(--ink) 70%, transparent);
+    margin: 0;
+  }
+</style>
+      <!-- Step ordinals MUST be lowercase italic Roman numerals: i. / ii. / iii. / iv. / v.
+     Arabic numbers break the editorial register — do not substitute "1." here. -->
+<div class="se-step">
+  <div class="se-step-num">i.</div>
+  <div class="se-step-body">
+    <h3 class="se-step-head">capture</h3>
+    <p class="se-step-text">Two lines max. One idea.</p>
+  </div>
+</div>
+    </div>
+    <details>
+      <summary class="ds-summary">Source</summary>
+      <pre class="ds-code">&lt;!-- COMPONENT: step-card --&gt;
+```html
+&lt;!-- Step ordinals MUST be lowercase italic Roman numerals: i. / ii. / iii. / iv. / v.
+     Arabic numbers break the editorial register — do not substitute &quot;1.&quot; here. --&gt;
+&lt;div class=&quot;se-step&quot;&gt;
+  &lt;div class=&quot;se-step-num&quot;&gt;i.&lt;/div&gt;
+  &lt;div class=&quot;se-step-body&quot;&gt;
+    &lt;h3 class=&quot;se-step-head&quot;&gt;{HEADLINE}&lt;/h3&gt;
+    &lt;p class=&quot;se-step-text&quot;&gt;{LEDE}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  /* Method / process step card. Defaults to translucent white; swap fill to
+     var(--brand-primary) / var(--brand-secondary) / var(--brand-accent) when
+     a beat needs color (one color per card, rotating across the row). */
+  .se-step {
+    background: var(--surface-card);
+    border-radius: 32px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    color: var(--ink);
+    min-height: 360px;
+  }
+  .se-step-num {
+    font-family: var(--font-display, &quot;Cormorant Garamond&quot;, serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(56px, 6vw, 92px);
+    line-height: 0.9;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .se-step-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .se-step-head {
+    font-family: var(--font-display, &quot;Cormorant Garamond&quot;, serif);
+    font-weight: 500;
+    font-size: clamp(28px, 2.8vw, 44px);
+    line-height: 1.05;
+    margin: 0;
+    color: var(--ink);
+  }
+  .se-step-head em {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .se-step-text {
+    font-family: var(--font-body, &quot;Work Sans&quot;, sans-serif);
+    font-weight: 400;
+    font-size: clamp(24px, 1.5vw, 28px);
+    line-height: 1.45;
+    color: color-mix(in srgb, var(--ink) 70%, transparent);
+    margin: 0;
+  }
+&lt;/style&gt;
+```
+&lt;!-- /COMPONENT --&gt;</pre>
+    </details>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head">
+      <span class="comp-name">swatch-row</span>
+      <span class="comp-marker">&lt;!-- COMPONENT: swatch-row --&gt;</span>
+    </div>
+    <div class="comp-preview preset-native-scope">
+      <style>
+  .se-swatch-row {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .se-swatch-dot {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-pill);
+    display: block;
+  }
+  .se-swatch-dot-1 {
+    background: var(--brand-primary);
+  }
+  .se-swatch-dot-2 {
+    background: var(--brand-secondary);
+  }
+  .se-swatch-dot-3 {
+    background: var(--brand-accent);
+  }
+</style>
+      <!-- Cover swatch row — three pastel discs at 56px each, rotating the brand's
+     three colors. The visual signature of the deck's color philosophy.
+     Lives at top-right of cover scenes; can also anchor a palette / system
+     scene as a centered horizontal row. -->
+<div class="se-swatch-row" aria-hidden="true">
+  <i class="se-swatch-dot se-swatch-dot-1"></i>
+  <i class="se-swatch-dot se-swatch-dot-2"></i>
+  <i class="se-swatch-dot se-swatch-dot-3"></i>
+</div>
+    </div>
+    <details>
+      <summary class="ds-summary">Source</summary>
+      <pre class="ds-code">&lt;!-- COMPONENT: swatch-row --&gt;
+```html
+&lt;!-- Cover swatch row — three pastel discs at 56px each, rotating the brand&#39;s
+     three colors. The visual signature of the deck&#39;s color philosophy.
+     Lives at top-right of cover scenes; can also anchor a palette / system
+     scene as a centered horizontal row. --&gt;
+&lt;div class=&quot;se-swatch-row&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;i class=&quot;se-swatch-dot se-swatch-dot-1&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;se-swatch-dot se-swatch-dot-2&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;se-swatch-dot se-swatch-dot-3&quot;&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;style&gt;
+  .se-swatch-row {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .se-swatch-dot {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-pill);
+    display: block;
+  }
+  .se-swatch-dot-1 {
+    background: var(--brand-primary);
+  }
+  .se-swatch-dot-2 {
+    background: var(--brand-secondary);
+  }
+  .se-swatch-dot-3 {
+    background: var(--brand-accent);
+  }
+&lt;/style&gt;
+```
+&lt;!-- /COMPONENT --&gt;</pre>
+    </details>
+  </div>
+</section>
+
+<section id="captions" class="ds-section">
+  <div class="eyebrow">§C · Captions (preset-local skin)</div>
+  <h2>Word <em>by word.</em></h2>
+  <p class="ds-prose">Live preview of <code>caption-skin.html</code> — this preset's own caption look. The same file is copied to <code>chunks/caption-skin.html</code> and filled with real word timings by the caption builder (Phase 4a.5); the demo words and loop here are preview-only.</p>
+  <div style="position: relative; width: 100%; max-width: 960px; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid #e5e5e5; border-radius: 8px; margin: 24px 0; background: #fff;">
+    <iframe title="caption-skin preview" loading="lazy" style="position: absolute; top: 0; left: 0; width: 1920px; height: 1080px; border: 0; transform: scale(0.5); transform-origin: top left;" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=1920, height=1080&quot; /&gt;
+    &lt;title&gt;Soft Editorial — Captions&lt;/title&gt;
+    &lt;!--
+      Soft Editorial caption skin (preset-local source — second caption source).
+
+      A pre-baked, brand-token-strict caption sub-composition. emit-chunks copies this to
+      design-system/chunks/caption-skin.html for the chosen preset; build-captions-html.mjs
+      then fills three reserved holes and writes compositions/captions.html:
+        - the empty GROUPS array       → engine's scene-aware, non-overlapping word groups
+        - the 0 DURATION + data-duration → real total_duration_s
+        - the empty brand-tokens style → the project's tokens.css
+      (the filler asserts each hole appears exactly once, so this note avoids the literals)
+
+      Contract (so ONE generic fill works for every preset's skin — no per-skin transform):
+        · root carries data-composition-id=&quot;captions&quot;; timeline registers window.__timelines[&quot;captions&quot;]
+        · canonical hooks .caption-group / .caption-word (+ states .is-active / .is-spoken)
+        · all colors are var(--*) / color-mix over tokens — brand-strict by construction
+        · no &lt;video&gt;, no Google Fonts, no placeholder transcript, no window.&lt;native&gt;() calls
+        · state changes use gsap.set({className}) (applied on seek) — NOT .call callbacks
+          (callbacks don't fire on the engine's frame-by-frame seek)
+
+      Visual: a translucent-white quarterly caption card floating on the cream field — no border,
+      no shadow, the cream bleed (a faint paper wash) and 24px rounded corners are the lift,
+      with a 1px dashed warm-ink hairline under the line. Current word gets a soft pastel
+      wash (var(--brand-primary)) in Cormorant Garamond, sentence case — soft-editorial reads
+      uppercase as shouting. The Sunday-supplement counterpart to the registry default
+      caption-pill-karaoke (soft rounded SaaS pill).
+    --&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js&quot;&gt;&lt;/script&gt;
+
+    &lt;!-- build-captions-html.mjs injects the project's tokens.css here --&gt;
+    &lt;style data-brand-tokens&gt;
+
+:root {
+  --brand-primary:   #F9A825;
+  --brand-secondary: #1A237E;
+  --brand-tertiary:  #37474F;
+  --brand-accent:    #FDD835;
+  --brand-costume:   #FFFFFF;
+  --ink:             #1A237E;
+  --canvas:          #FFFFFF;
+  --brand-gradient:  linear-gradient(135deg, #F9A825 0%, #1A237E 50%, #FDD835 100%);
+  --deco-1:          #F7CB46;
+  --deco-2:          #99E885;
+  --deco-3:          #C0F7FE;
+  --deco-4:          #FE90E8;
+  --font-display:    'EB Garamond', Georgia, serif;
+  --font-body:       'Work Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono:       'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --paper-anchor: #f2eedf;
+  --surface-card: rgba(255, 255, 255, 0.55);
+  --surface-paper: color-mix(in srgb, var(--brand-accent) 8%, var(--paper-anchor));
+  --rule-dashed: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+  --rule-solid: 1.5px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  --radius-card-lg: 36px; /* large insight / closer / stat cards */
+  --radius-card: 28px; /* default cards, items, process nodes */
+  --radius-card-sm: 24px; /* compact panels, action bars */
+  --radius-tile: 16px; /* swatch tiles */
+  --radius-chip: 14px; /* small decorative chips */
+  --radius-pill: 999px; /* status pills, swatch discs */
+  --gap-outer: 4.2vw; /* ~80px on 1920 — outer slide padding */
+  --gap-cards: 1.5vw; /* ~28px between cards in a row */
+  --gap-cards-lg: 1.9vw; /* ~36px between major panels */
+  --gap-stack: 1.9vw; /* vertical between stacked text */
+  --pad-card-lg: 64px 48px;
+  --pad-card-md: 48px 52px;
+  --pad-card-sm: 28px 30px;
+  --measure-body: 32vw; /* ~614px ≈ 65ch at body size */
+  --measure-display: 43vw; /* ~826px ≈ display headline cap */
+}&lt;/style&gt;
+
+    &lt;style&gt;
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        margin: 0;
+        overflow: hidden;
+        background: transparent;
+      }
+      #captions-root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: transparent;
+        pointer-events: none;
+      }
+
+      /* soft-editorial · captions · translucent-white card on the cream field, no border,
+         no shadow (translucency + 24px rounded form is the lift), 1px dashed warm-ink
+         hairline under the line, Cormorant serif sentence case, soft pastel wash on the
+         current word */
+      .caption-layer {
+        position: absolute;
+        inset: 0;
+        z-index: 20;
+        pointer-events: none;
+      }
+      .caption-stage {
+        position: absolute;
+        left: 50%;
+        bottom: 40px;
+        transform: translateX(-50%);
+        width: 1600px;
+        height: 210px;
+      }
+      .caption-group {
+        /* every group is absolutely positioned over the SAME band — exactly one is shown
+           at a time via opacity. Must be absolute: if groups stay in-flow, N groups lay
+           out side-by-side (opacity:0 hides but still occupies space). */
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+      }
+
+      /* THE soft-editorial card — translucent white floating on cream, no border, no shadow.
+         The cream bleeds through the 55% fill and IS the depth signal; 24px rounded corners
+         and generous padding carry the rest. A dashed warm-ink hairline sits below the line. */
+      .caption-pill {
+        position: relative;
+        max-width: 1600px;
+        padding: 22px 48px 30px;
+        background: var(--surface-card, color-mix(in srgb, var(--canvas) 55%, transparent));
+        border: none;
+        border-radius: var(--radius-card-sm, 24px);
+        box-shadow: none;
+      }
+      /* dashed warm-ink hairline — the notebook-margin feel, centered under the line */
+      .caption-pill::after {
+        content: &quot;&quot;;
+        position: absolute;
+        left: 48px;
+        right: 48px;
+        bottom: 16px;
+        border-top: var(--rule-dashed, 1px dashed color-mix(in srgb, var(--ink) 18%, transparent));
+      }
+      .caption-line {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.1em 0.32em;
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: clamp(42px, 4.2vw, 56px);
+        line-height: 1.06;
+        letter-spacing: -0.01em;
+      }
+
+      /* upcoming — faint warm ink, no wash */
+      .caption-word {
+        display: inline-block;
+        padding: 0 0.04em;
+        color: color-mix(in srgb, var(--ink) 42%, var(--canvas));
+      }
+      /* current word — THE soft pastel wash, fully-rounded (box-shadow spread follows
+         border-radius = a rounded pastel halo, no layout shift). Ink text, never inverted. */
+      .caption-word.is-active {
+        color: var(--ink);
+        background: var(--brand-primary);
+        border-radius: var(--radius-pill, 999px);
+        box-shadow: 0 0 0 0.14em var(--brand-primary);
+      }
+      /* already spoken — solid warm ink, wash cleared */
+      .caption-word.is-spoken {
+        color: var(--ink);
+        background: transparent;
+        box-shadow: none;
+      }
+
+      /* optional per-word accents (dormant until a word-classer tags them) */
+      .caption-word.cap-brand {
+        color: var(--brand-secondary);
+      }
+      .caption-word.cap-brand.is-active {
+        color: var(--ink);
+        background: var(--brand-secondary);
+        border-radius: var(--radius-pill, 999px);
+        box-shadow: 0 0 0 0.14em var(--brand-secondary);
+      }
+      .caption-word.cap-num {
+        color: color-mix(in srgb, var(--ink) 72%, var(--canvas));
+      }
+      /* CTA — soft-editorial's signature dashed warm-ink underline, never solid */
+      .caption-word.cap-cta {
+        text-decoration: underline dashed;
+        text-decoration-thickness: 2px;
+        text-decoration-color: var(--brand-primary);
+        text-underline-offset: 0.14em;
+      }
+
+      @media (max-aspect-ratio: 9/16) {
+        .caption-stage {
+          bottom: 100px;
+          width: 92%;
+        }
+        .caption-line {
+          font-size: clamp(34px, 5.2vw, 46px);
+        }
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div
+      id=&quot;captions-root&quot;
+      data-composition-id=&quot;captions&quot;
+      data-timeline-locked
+      data-start=&quot;0&quot;
+      data-duration=&quot;6.6&quot;
+      data-fps=&quot;30&quot;
+      data-width=&quot;1920&quot;
+      data-height=&quot;1080&quot;
+    &gt;
+      &lt;div class=&quot;caption-layer&quot; aria-hidden=&quot;true&quot;&gt;
+        &lt;div id=&quot;caption-stage&quot; class=&quot;caption-stage&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+      // build-captions-html.mjs injects the engine's scene-aware groups + real duration.
+      var GROUPS = [{&quot;start&quot;:0.3,&quot;end&quot;:2.1,&quot;words&quot;:[{&quot;text&quot;:&quot;WRITE&quot;,&quot;start&quot;:0.3,&quot;end&quot;:0.9},{&quot;text&quot;:&quot;HTML,&quot;,&quot;start&quot;:0.9,&quot;end&quot;:1.4},{&quot;text&quot;:&quot;RENDER&quot;,&quot;start&quot;:1.4,&quot;end&quot;:2.1}]},{&quot;start&quot;:2.5,&quot;end&quot;:4.3,&quot;words&quot;:[{&quot;text&quot;:&quot;VIDEO.&quot;,&quot;start&quot;:2.5,&quot;end&quot;:3.1},{&quot;text&quot;:&quot;NO&quot;,&quot;start&quot;:3.1,&quot;end&quot;:3.5},{&quot;text&quot;:&quot;TIMELINE.&quot;,&quot;start&quot;:3.5,&quot;end&quot;:4.3}]},{&quot;start&quot;:4.7,&quot;end&quot;:6.2,&quot;words&quot;:[{&quot;text&quot;:&quot;JUST&quot;,&quot;start&quot;:4.7,&quot;end&quot;:5.1},{&quot;text&quot;:&quot;CODE.&quot;,&quot;start&quot;:5.1,&quot;end&quot;:5.9}]}];
+      var DURATION = 6.6;
+
+      (function () {
+        var stage = document.getElementById(&quot;caption-stage&quot;);
+
+        // build DOM: one .caption-group per group, .caption-word per word
+        GROUPS.forEach(function (group, g) {
+          var groupEl = document.createElement(&quot;div&quot;);
+          groupEl.className = &quot;caption-group&quot;;
+          groupEl.id = &quot;caption-group-&quot; + g;
+          var pill = document.createElement(&quot;div&quot;);
+          pill.className = &quot;caption-pill&quot;;
+          var line = document.createElement(&quot;div&quot;);
+          line.className = &quot;caption-line&quot;;
+          (group.words || []).forEach(function (w, i) {
+            var span = document.createElement(&quot;span&quot;);
+            span.className = &quot;caption-word&quot;;
+            span.id = &quot;caption-word-&quot; + g + &quot;-&quot; + i;
+            span.textContent = String(w.text).toUpperCase();
+            line.appendChild(span);
+          });
+          pill.appendChild(line);
+          groupEl.appendChild(pill);
+          stage.appendChild(groupEl);
+        });
+
+        window.__timelines = window.__timelines || {};
+        var tl = gsap.timeline({ paused: true });
+
+        GROUPS.forEach(function (group, g) {
+          var groupEl = document.getElementById(&quot;caption-group-&quot; + g);
+          var words = group.words || [];
+          var next = GROUPS[g + 1];
+          var isLast = g === GROUPS.length - 1;
+          var start = Math.max(0, Number(group.start));
+          var end = isLast ? DURATION : Math.min(Number(next.start), Number(group.end) + 0.3);
+          if (end &lt;= start) end = start + 0.01;
+
+          // group on/off — exactly one group visible at a time
+          tl.set(groupEl, { opacity: 1 }, start);
+          tl.set(groupEl, { opacity: 0 }, end);
+
+          // 3-state karaoke via className SETS — seek-safe (gsap.set applies on the
+          // engine's frame-by-frame seek; .call callbacks would NOT fire).
+          words.forEach(function (w, i) {
+            var el = document.getElementById(&quot;caption-word-&quot; + g + &quot;-&quot; + i);
+            var at = Math.max(start, Number(w.start));
+            tl.set(el, { className: &quot;caption-word&quot; }, start); // upcoming (also resets on reverse-seek)
+            tl.set(el, { className: &quot;caption-word is-active&quot; }, at); // current
+            tl.fromTo(el, { scale: 0.9 }, { scale: 1, duration: 0.14, ease: &quot;power2.inOut&quot; }, at);
+            if (i + 1 &lt; words.length) {
+              var nextAt = Math.max(start, Number(words[i + 1].start));
+              tl.set(el, { className: &quot;caption-word is-spoken&quot; }, nextAt); // demote when next stamps
+            }
+          });
+          if (words.length) {
+            var lastEl = document.getElementById(&quot;caption-word-&quot; + g + &quot;-&quot; + (words.length - 1));
+            var lastSpoken = Math.min(end, Number(words[words.length - 1].end) + 0.1);
+            tl.set(lastEl, { className: &quot;caption-word is-spoken&quot; }, lastSpoken);
+          }
+        });
+
+        // full-span anchor so the sub-comp timeline spans the whole video
+        tl.to({}, { duration: DURATION }, 0);
+        window.__timelines[&quot;captions&quot;] = tl;
+      })();
+    &lt;/script&gt;
+    &lt;script&gt;
+    (function () {
+      var t = window.__timelines &amp;&amp; window.__timelines[&quot;captions&quot;];
+      if (t &amp;&amp; t.duration()) t.repeat(-1).repeatDelay(0.5).play();
+    })();
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+  </div>
+</section>
+</main>
+
+</body>
+</html>
