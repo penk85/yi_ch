@@ -1,0 +1,119 @@
+<template id="scene_8-template">
+  <div id="root" class="scene_8-root" data-composition-id="scene_8" data-width="1920" data-height="1080" data-duration="5.483" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+    <style>
+      #root {
+        background: var(--paper-anchor);
+        font-family: var(--font-display);
+      }
+      #root *, #root *::before, #root *::after { box-sizing: border-box; }
+      .s8-mesh-bg {
+        position: absolute; inset: 0; z-index: 0;
+        background:
+          radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--brand-secondary) 12%, transparent) 0%, transparent 65%),
+          radial-gradient(ellipse at 25% 70%, color-mix(in srgb, var(--brand-primary) 8%, transparent) 0%, transparent 55%),
+          radial-gradient(ellipse at 80% 25%, color-mix(in srgb, var(--brand-accent) 6%, transparent) 0%, transparent 50%);
+      }
+      .s8-content {
+        position: relative; z-index: 1;
+        width: 100%; height: 100%;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        padding: 80px;
+        gap: 20px;
+      }
+      .s8-word {
+        display: inline-block;
+        opacity: 0;
+      }
+      .s8-name {
+        font-weight: 500;
+        font-size: clamp(80px, 8.5vw, 148px);
+        line-height: 0.9;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        text-align: center;
+        max-width: 1200px;
+        margin: 0;
+      }
+      .s8-since {
+        font-family: var(--font-body);
+        font-weight: 400;
+        font-size: 36px;
+        letter-spacing: 0.04em;
+        color: var(--brand-primary);
+        text-align: center;
+        opacity: 0;
+      }
+      .s8-rule {
+        width: 120px;
+        height: 2px;
+        background: color-mix(in srgb, var(--ink) 25%, transparent);
+        opacity: 0;
+        margin: 8px 0;
+      }
+    </style>
+
+    <div class="s8-mesh-bg"></div>
+
+    <div class="s8-content">
+      <h1 class="s8-name">
+        <span class="s8-word" id="s8-w0">Young</span>
+        <span class="s8-word" id="s8-w1">Israel</span>
+        <span class="s8-word" id="s8-w2">of</span>
+        <span class="s8-word" id="s8-w3">Cherry</span>
+        <span class="s8-word" id="s8-w4">Hill</span>
+      </h1>
+      <div class="s8-rule" id="s8-rule"></div>
+      <div class="s8-since" id="s8-since">Serving our community since 1996</div>
+    </div>
+
+    <script>
+      var EASE = {
+        entry: "power2.out",
+        emphasis: "power2.inOut",
+        exit: "power2.in",
+        drift: "sine.inOut",
+      };
+      var DUR = { snap: 0.18, med: 0.5, slow: 1.0 };
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      var TOTAL = 5.483;
+
+      // Slow dolly-in
+      tl.fromTo("#root", { scale: 0.97 }, { scale: 1, duration: TOTAL, ease: EASE.drift }, 0);
+
+      // Discrete text sequence — word by word
+      var words = ["#s8-w0","#s8-w1","#s8-w2","#s8-w3","#s8-w4"];
+      words.forEach(function(sel, i) {
+        tl.fromTo(sel,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: DUR.med, ease: EASE.entry },
+          0.15 + i * 0.22
+        );
+      });
+
+      // Stillness-before-climax: 0.5s pause after name assembles (last word at ~1.23s + 0.5s dur = ~1.73s + 0.5s pause)
+      // Rule fades at 2.3s
+      tl.fromTo("#s8-rule", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.45, ease: EASE.entry }, 2.25);
+
+      // Year aside enters after pause
+      tl.fromTo("#s8-since", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: DUR.med, ease: EASE.entry }, 2.55);
+
+      // Sine drift on the name block after it assembles
+      var phase = { p: 0 };
+      var nameEl = document.querySelector(".s8-name");
+      tl.to(phase, {
+        p: Math.PI * 2,
+        duration: TOTAL - 2.0,
+        ease: "none",
+        onUpdate: function() {
+          var yy = Math.sin(phase.p) * 3;
+          nameEl.style.transform = "translateY(" + yy + "px)";
+        }
+      }, 2.0);
+
+      window.__timelines["scene_8"] = tl;
+    </script>
+  </div>
+</template>

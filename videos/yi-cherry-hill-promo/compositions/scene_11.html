@@ -1,0 +1,102 @@
+<template id="scene_11-template">
+  <div id="root" class="scene_11-root" data-composition-id="scene_11" data-width="1920" data-height="1080" data-duration="2.539" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+    <style>
+      #root {
+        background: var(--paper-anchor);
+        font-family: var(--font-display);
+      }
+      #root *, #root *::before, #root *::after { box-sizing: border-box; }
+      .s11-mesh-bg {
+        position: absolute; inset: 0; z-index: 0;
+        background:
+          radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--brand-primary) 18%, transparent) 0%, transparent 70%),
+          radial-gradient(ellipse at 20% 30%, color-mix(in srgb, var(--brand-accent) 10%, transparent) 0%, transparent 55%),
+          radial-gradient(ellipse at 80% 70%, color-mix(in srgb, var(--brand-secondary) 8%, transparent) 0%, transparent 50%);
+      }
+      .s11-content {
+        position: relative; z-index: 1;
+        width: 100%; height: 100%;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        padding: 80px;
+        gap: 24px;
+      }
+      .s11-hebrew {
+        font-weight: 500;
+        font-size: clamp(100px, 11vw, 190px);
+        line-height: 0.88;
+        letter-spacing: -0.01em;
+        color: var(--brand-primary);
+        text-align: center;
+        margin: 0;
+        opacity: 0;
+        direction: rtl;
+      }
+      .s11-english {
+        font-family: var(--font-body);
+        font-weight: 400;
+        font-size: 34px;
+        letter-spacing: 0.06em;
+        color: var(--ink);
+        text-align: center;
+        opacity: 0;
+      }
+    </style>
+
+    <div class="s11-mesh-bg"></div>
+
+    <div class="s11-content">
+      <h1 class="s11-hebrew" id="s11-hebrew">כֻּלָּנוּ כְּאֶחָד</h1>
+      <div class="s11-english" id="s11-english">We are all one</div>
+    </div>
+
+    <script>
+      var EASE = {
+        entry: "power2.out",
+        emphasis: "power2.inOut",
+        exit: "power2.in",
+        drift: "sine.inOut",
+      };
+      var DUR = { snap: 0.18, med: 0.5, slow: 1.0 };
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      var TOTAL = 2.539;
+
+      // Deep dolly-in — pulling viewer into the words
+      tl.fromTo("#root", { scale: 0.96 }, { scale: 1, duration: TOTAL, ease: EASE.drift }, 0);
+
+      // Hebrew motto assembles — discrete sequence (2 words)
+      // Word 1: כֻּלָּנוּ
+      tl.fromTo("#s11-hebrew",
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: DUR.med, ease: EASE.entry },
+        0.1
+      );
+
+      // Stillness-before-climax: 0.6s pause — Hebrew stands alone
+      // English translation enters at ~1.2s (0.1 + 0.5 entry + 0.6 pause)
+      tl.fromTo("#s11-english",
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: DUR.med, ease: EASE.entry },
+        1.2
+      );
+
+      // Sine drift on Hebrew after it lands
+      var hebrewEl = document.getElementById("s11-hebrew");
+      var phase = { p: 0 };
+      tl.to(phase, {
+        p: Math.PI * 2,
+        duration: TOTAL - 1.0,
+        ease: "none",
+        onUpdate: function() {
+          var yy = Math.sin(phase.p) * 4;
+          var sc = 1 + Math.sin(phase.p) * 0.008;
+          hebrewEl.style.transform = "translateY(" + yy + "px) scale(" + sc + ")";
+        }
+      }, 1.0);
+
+      window.__timelines["scene_11"] = tl;
+    </script>
+  </div>
+</template>

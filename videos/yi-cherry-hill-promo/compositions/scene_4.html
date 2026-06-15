@@ -1,0 +1,162 @@
+<template id="scene_4-template">
+  <div id="root" class="scene_4-root" data-composition-id="scene_4" data-width="1920" data-height="1080" data-duration="3.84" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+    <style>
+      #root {
+        background: var(--paper-anchor);
+        font-family: var(--font-display);
+      }
+      #root *, #root *::before, #root *::after { box-sizing: border-box; }
+      .s4-mesh-bg {
+        position: absolute; inset: 0; z-index: 0;
+        background:
+          radial-gradient(ellipse at 50% 45%, color-mix(in srgb, var(--brand-primary) 14%, transparent) 0%, transparent 65%),
+          radial-gradient(ellipse at 20% 60%, color-mix(in srgb, var(--brand-secondary) 7%, transparent) 0%, transparent 50%),
+          radial-gradient(ellipse at 80% 30%, color-mix(in srgb, var(--brand-accent) 8%, transparent) 0%, transparent 50%);
+      }
+      .s4-content {
+        position: relative; z-index: 1;
+        width: 100%; height: 100%;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        padding: 80px;
+        gap: 32px;
+      }
+      .s4-label {
+        font-family: var(--font-body);
+        font-weight: 500;
+        font-size: 28px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: color-mix(in srgb, var(--ink) 55%, transparent);
+        opacity: 0;
+      }
+      .s4-prices {
+        display: flex;
+        align-items: baseline;
+        gap: 48px;
+      }
+      .s4-price-block {
+        display: flex; flex-direction: column; align-items: center; gap: 8px;
+      }
+      .s4-price-num {
+        font-weight: 500;
+        font-size: 140px;
+        line-height: 0.88;
+        letter-spacing: -0.03em;
+        color: var(--brand-primary);
+        font-variant-numeric: tabular-nums;
+        opacity: 0;
+      }
+      .s4-price-label {
+        font-family: var(--font-body);
+        font-weight: 400;
+        font-size: 22px;
+        color: color-mix(in srgb, var(--ink) 60%, transparent);
+        opacity: 0;
+      }
+      .s4-divider {
+        font-size: 80px;
+        font-weight: 300;
+        color: color-mix(in srgb, var(--ink) 20%, transparent);
+        line-height: 1;
+        align-self: center;
+        margin-bottom: 24px;
+      }
+      .s4-tagline {
+        font-family: var(--font-body);
+        font-weight: 400;
+        font-size: 30px;
+        color: color-mix(in srgb, var(--ink) 65%, transparent);
+        text-align: center;
+        opacity: 0;
+      }
+      .s4-tagline em {
+        font-style: italic;
+        color: var(--ink);
+      }
+    </style>
+
+    <div class="s4-mesh-bg"></div>
+
+    <div class="s4-content">
+      <div class="s4-label" id="s4-label">Affordable homes within the eruv</div>
+      <div class="s4-prices">
+        <div class="s4-price-block">
+          <div class="s4-price-num" id="s4-lo">$300k</div>
+          <div class="s4-price-label" id="s4-lo-lbl">starting from</div>
+        </div>
+        <div class="s4-divider">—</div>
+        <div class="s4-price-block">
+          <div class="s4-price-num" id="s4-hi">$580k</div>
+          <div class="s4-price-label" id="s4-hi-lbl">up to</div>
+        </div>
+      </div>
+      <div class="s4-tagline" id="s4-tagline">Real value, <em>real community</em></div>
+    </div>
+
+    <script>
+      var EASE = {
+        entry: "power2.out",
+        emphasis: "power2.inOut",
+        exit: "power2.in",
+        drift: "sine.inOut",
+      };
+      var DUR = { snap: 0.18, med: 0.5, slow: 1.0 };
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      var TOTAL = 3.84;
+
+      // Dolly-in
+      tl.fromTo("#root", { scale: 0.97 }, { scale: 1, duration: TOTAL, ease: EASE.drift }, 0);
+
+      // Label fades in
+      tl.fromTo("#s4-label", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: DUR.med, ease: EASE.entry }, 0.1);
+
+      // Price counters count up with dynamic scale
+      var loState = { v: 100, fs: 90 };
+      var hiState = { v: 300, fs: 90 };
+      var loEl = document.getElementById("s4-lo");
+      var hiEl = document.getElementById("s4-hi");
+
+      tl.fromTo("#s4-lo", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: EASE.entry }, 0.35);
+      tl.to(loState, {
+        v: 300, fs: 140,
+        duration: 1.1, ease: "power3.out",
+        onUpdate: function() {
+          loEl.textContent = "$" + Math.round(loState.v) + "k";
+          loEl.style.fontSize = loState.fs + "px";
+        }
+      }, 0.45);
+
+      tl.fromTo("#s4-hi", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: EASE.entry }, 0.5);
+      tl.to(hiState, {
+        v: 580, fs: 140,
+        duration: 1.1, ease: "power3.out",
+        onUpdate: function() {
+          hiEl.textContent = "$" + Math.round(hiState.v) + "k";
+          hiEl.style.fontSize = hiState.fs + "px";
+        }
+      }, 0.55);
+
+      tl.fromTo("#s4-lo-lbl", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: EASE.entry }, 0.8);
+      tl.fromTo("#s4-hi-lbl", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: EASE.entry }, 0.85);
+      tl.fromTo("#s4-tagline", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: DUR.med, ease: EASE.entry }, 1.7);
+
+      // Sine drift on final prices after count completes
+      var phase = { p: 0 };
+      tl.to(phase, {
+        p: Math.PI * 2,
+        duration: TOTAL - 1.8,
+        ease: "none",
+        onUpdate: function() {
+          var sc = 1 + Math.sin(phase.p) * 0.006;
+          loEl.style.transform = "scale(" + sc + ")";
+          hiEl.style.transform = "scale(" + sc + ")";
+        }
+      }, 1.8);
+
+      window.__timelines["scene_4"] = tl;
+    </script>
+  </div>
+</template>

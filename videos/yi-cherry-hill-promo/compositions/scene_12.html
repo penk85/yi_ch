@@ -1,0 +1,124 @@
+<template id="scene_12-template">
+  <div id="root" class="scene_12-root" data-composition-id="scene_12" data-width="1920" data-height="1080" data-duration="3.371" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+    <style>
+      #root {
+        background: var(--paper-anchor);
+        font-family: var(--font-display);
+      }
+      #root *, #root *::before, #root *::after { box-sizing: border-box; }
+      .s12-mesh-bg {
+        position: absolute; inset: 0; z-index: 0;
+        background:
+          radial-gradient(ellipse at 50% 45%, color-mix(in srgb, var(--brand-primary) 15%, transparent) 0%, transparent 70%),
+          radial-gradient(ellipse at 30% 70%, color-mix(in srgb, var(--brand-secondary) 8%, transparent) 0%, transparent 55%),
+          radial-gradient(ellipse at 75% 25%, color-mix(in srgb, var(--brand-accent) 7%, transparent) 0%, transparent 50%);
+      }
+      .s12-content {
+        position: relative; z-index: 1;
+        width: 100%; height: 100%;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        padding: 80px;
+        gap: 40px;
+      }
+      .s12-hero {
+        font-weight: 500;
+        font-size: clamp(90px, 10vw, 170px);
+        line-height: 0.9;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        text-align: center;
+        max-width: 1100px;
+        margin: 0;
+        opacity: 0;
+      }
+      .s12-hero em {
+        font-weight: 400;
+        font-style: italic;
+        color: var(--brand-secondary);
+      }
+      .s12-cta-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--brand-primary);
+        color: var(--canvas);
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 28px;
+        letter-spacing: 0.04em;
+        padding: 20px 56px;
+        border-radius: var(--radius-pill);
+        opacity: 0;
+        transform-origin: center;
+      }
+    </style>
+
+    <div class="s12-mesh-bg"></div>
+
+    <div class="s12-content">
+      <h1 class="s12-hero" id="s12-hero">Come <em>home</em> to Cherry Hill</h1>
+      <div class="s12-cta-pill" id="s12-cta">yicherryhill.com</div>
+    </div>
+
+    <script>
+      var EASE = {
+        entry: "power2.out",
+        emphasis: "power2.inOut",
+        exit: "power2.in",
+        drift: "sine.inOut",
+        spring: "elastic.out(1, 0.55)",
+      };
+      var DUR = { snap: 0.18, med: 0.5, slow: 1.0 };
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      var TOTAL = 3.371;
+
+      // Closing dolly-in
+      tl.fromTo("#root", { scale: 0.97 }, { scale: 1, duration: TOTAL, ease: EASE.drift }, 0);
+
+      // Hero phrase
+      tl.fromTo("#s12-hero",
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: DUR.med, ease: EASE.entry },
+        0.15
+      );
+
+      // CTA pill — press-release-spring: compress then spring out
+      tl.fromTo("#s12-cta",
+        { opacity: 0, scale: 0.72 },
+        { opacity: 1, scale: 1, duration: 0.7, ease: EASE.spring },
+        0.85
+      );
+
+      // Gentle sine drift on hero phrase
+      var heroEl = document.getElementById("s12-hero");
+      var phase = { p: 0 };
+      tl.to(phase, {
+        p: Math.PI * 2,
+        duration: TOTAL - 1.2,
+        ease: "none",
+        onUpdate: function() {
+          var yy = Math.sin(phase.p) * 3;
+          heroEl.style.transform = "translateY(" + yy + "px)";
+        }
+      }, 1.2);
+
+      // CTA pill breathes gently
+      var ctaEl = document.getElementById("s12-cta");
+      var ctaPhase = { p: 0 };
+      tl.to(ctaPhase, {
+        p: Math.PI * 2,
+        duration: TOTAL - 1.8,
+        ease: "none",
+        onUpdate: function() {
+          var sc = 1 + Math.sin(ctaPhase.p) * 0.012;
+          ctaEl.style.transform = "scale(" + sc + ")";
+        }
+      }, 1.8);
+
+      window.__timelines["scene_12"] = tl;
+    </script>
+  </div>
+</template>

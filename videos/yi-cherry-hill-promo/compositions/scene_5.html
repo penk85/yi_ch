@@ -1,0 +1,188 @@
+<template id="scene_5-template">
+  <div id="root" class="scene_5-root" data-composition-id="scene_5" data-width="1920" data-height="1080" data-duration="3.861" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+    <style>
+      #root {
+        background: var(--paper-anchor);
+        font-family: var(--font-body);
+      }
+      #root *, #root *::before, #root *::after { box-sizing: border-box; }
+
+      .s5-mesh-bg {
+        position: absolute; inset: 0; z-index: 0;
+        background:
+          radial-gradient(ellipse at 30% 40%, color-mix(in srgb, var(--brand-primary) 12%, transparent) 0%, transparent 60%),
+          radial-gradient(ellipse at 70% 60%, color-mix(in srgb, var(--brand-secondary) 8%, transparent) 0%, transparent 55%),
+          radial-gradient(ellipse at 50% 80%, color-mix(in srgb, var(--brand-accent) 6%, transparent) 0%, transparent 50%);
+      }
+
+      .s5-content {
+        position: relative; z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%; height: 100%;
+        padding: 0 80px;
+      }
+
+      .s5-hero-col {
+        flex: 0 0 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+      }
+
+      .s5-hero {
+        font-family: var(--font-display);
+        font-size: 72px;
+        font-weight: 400;
+        line-height: 1.2;
+        color: var(--ink);
+        max-width: 820px;
+      }
+
+      .s5-hero-em {
+        color: var(--brand-primary);
+        font-style: italic;
+      }
+
+      .s5-aside-col {
+        flex: 0 0 28%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .s5-aside {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 400;
+        font-style: italic;
+        color: color-mix(in srgb, var(--ink) 55%, transparent);
+        text-align: right;
+        max-width: 280px;
+        line-height: 1.5;
+      }
+
+      .s5-particle {
+        position: absolute; z-index: 0;
+        width: 4px; height: 4px;
+        border-radius: 50%;
+        background: var(--brand-primary);
+        opacity: 0.12;
+      }
+    </style>
+
+    <div class="s5-mesh-bg"></div>
+
+    <div class="s5-particle" style="top:18%;left:12%;"></div>
+    <div class="s5-particle" style="top:72%;left:85%;"></div>
+    <div class="s5-particle" style="top:35%;left:78%;"></div>
+
+    <div class="s5-content">
+      <div class="s5-hero-col">
+        <div class="s5-hero" id="s5-hero"></div>
+      </div>
+      <div class="s5-aside-col">
+        <div class="s5-aside" id="s5-aside">A home for <em>every</em> season of life</div>
+      </div>
+    </div>
+
+    <script>
+      const EASE = {
+        entry: "power2.out",
+        emphasis: "power2.inOut",
+        exit: "power2.in",
+        drift: "sine.inOut",
+      };
+      const DUR = {
+        snap: 0.18,
+        med: 0.5,
+        slow: 1.0,
+      };
+
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      /* discrete-text-sequence: hero phrase assembles word by word */
+      var heroWords = [
+        "Choosing",
+        "well",
+        "for",
+        "the",
+        "ones",
+        "who",
+        '<span class="s5-hero-em">matter</span>'
+      ];
+
+      var SEQUENCE = [
+        { t: 0.0,  text: "" },
+        { t: 0.25, text: heroWords.slice(0, 1).join(" ") },
+        { t: 0.55, text: heroWords.slice(0, 2).join(" ") },
+        { t: 0.85, text: heroWords.slice(0, 3).join(" ") },
+        { t: 1.05, text: heroWords.slice(0, 4).join(" ") },
+        { t: 1.25, text: heroWords.slice(0, 5).join(" ") },
+        { t: 1.50, text: heroWords.slice(0, 6).join(" ") },
+        { t: 1.80, text: heroWords.join(" ") },
+      ];
+
+      function textAt(time) {
+        for (var i = SEQUENCE.length - 1; i >= 0; i--) {
+          if (time >= SEQUENCE[i].t) return SEQUENCE[i].text;
+        }
+        return "";
+      }
+
+      var heroEl = document.getElementById("s5-hero");
+      var asideEl = document.getElementById("s5-aside");
+      var TOTAL = 3.861;
+
+      var driver = { t: 0 };
+      var lastText = "";
+      tl.to(driver, {
+        t: TOTAL,
+        duration: TOTAL,
+        ease: "none",
+        onUpdate: function() {
+          var txt = textAt(driver.t);
+          if (txt !== lastText) {
+            heroEl.innerHTML = txt;
+            lastText = txt;
+          }
+        }
+      }, 0);
+
+      /* aside fades in after hero lands */
+      tl.fromTo("#s5-aside",
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: DUR.med, ease: EASE.entry },
+        2.1
+      );
+
+      /* sine-wave-loop: gentle breathing on hero after assembly */
+      var phase = { p: 0 };
+      var IDLE_START = 2.0;
+      var IDLE_DUR = TOTAL - IDLE_START;
+      var CYCLES = IDLE_DUR / 2.8;
+      tl.to(phase, {
+        p: Math.PI * 2 * CYCLES,
+        duration: IDLE_DUR,
+        ease: "none",
+        onUpdate: function() {
+          var s = 1 + Math.sin(phase.p) * 0.008;
+          var yOff = Math.sin(phase.p) * 2;
+          heroEl.style.transform = "translateY(" + yOff + "px) scale(" + s + ")";
+        }
+      }, IDLE_START);
+
+      /* macro camera: slow drift rightward */
+      tl.fromTo(".s5-content",
+        { x: -8 },
+        { x: 8, duration: TOTAL, ease: EASE.drift },
+        0
+      );
+
+      window.__timelines["scene_5"] = tl;
+    </script>
+  </div>
+</template>

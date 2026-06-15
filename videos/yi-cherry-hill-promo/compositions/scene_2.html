@@ -1,0 +1,151 @@
+<template id="scene_2-template">
+  <div id="root" class="scene_2-root" data-composition-id="scene_2" data-width="1920" data-height="1080" data-duration="3.563" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+    <style>
+      #root {
+        background: var(--paper-anchor);
+        font-family: var(--font-display);
+      }
+      #root *, #root *::before, #root *::after { box-sizing: border-box; }
+      .s2-mesh-bg {
+        position: absolute; inset: 0; z-index: 0;
+        background:
+          radial-gradient(ellipse at 30% 40%, color-mix(in srgb, var(--brand-primary) 12%, transparent) 0%, transparent 60%),
+          radial-gradient(ellipse at 70% 60%, color-mix(in srgb, var(--brand-secondary) 8%, transparent) 0%, transparent 55%),
+          radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--brand-accent) 6%, transparent) 0%, transparent 50%);
+      }
+      .s2-content {
+        position: relative; z-index: 1;
+        width: 100%; height: 100%;
+        display: flex; align-items: center; justify-content: center;
+        gap: 80px;
+        padding: 80px;
+      }
+      .s2-hero-col {
+        flex: 0 0 55%;
+        display: flex; flex-direction: column; gap: 24px;
+      }
+      .s2-hero-display {
+        font-weight: 500;
+        font-size: clamp(100px, 10vw, 172px);
+        line-height: 0.92;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        margin: 0;
+      }
+      .s2-hero-display em {
+        font-weight: 400;
+        font-style: italic;
+        color: var(--brand-primary);
+      }
+      .s2-word {
+        display: inline-block;
+        opacity: 0;
+      }
+      .s2-accolade-col {
+        flex: 0 0 35%;
+        display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+      }
+      .s2-accolade-frame {
+        border: var(--rule-dashed);
+        border-radius: var(--radius-card);
+        padding: 36px 32px;
+        opacity: 0;
+      }
+      .s2-accolade-num {
+        font-weight: 500;
+        font-size: 72px;
+        line-height: 0.9;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        font-variant-numeric: tabular-nums;
+      }
+      .s2-accolade-label {
+        font-family: var(--font-body);
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 1.4;
+        color: color-mix(in srgb, var(--ink) 70%, transparent);
+        max-width: 24ch;
+        margin-top: 12px;
+      }
+      .s2-accolade-accent {
+        color: var(--brand-primary);
+        font-style: italic;
+      }
+    </style>
+
+    <div class="s2-mesh-bg"></div>
+
+    <div class="s2-content">
+      <div class="s2-hero-col">
+        <h1 class="s2-hero-display">
+          <span class="s2-word" id="s2-w0">Cherry</span>
+          <span class="s2-word" id="s2-w1">Hill</span>
+          <span class="s2-word" id="s2-w2"><em>living</em></span>
+        </h1>
+      </div>
+      <div class="s2-accolade-col">
+        <div class="s2-accolade-frame" id="s2-accolade">
+          <div class="s2-accolade-num" id="s2-accolade-num">0</div>
+          <div class="s2-accolade-label">
+            among the <span class="s2-accolade-accent">finest places</span> to raise a family
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var EASE = {
+        entry: "power2.out",
+        emphasis: "power2.inOut",
+        exit: "power2.in",
+        drift: "sine.inOut",
+      };
+      var DUR = {
+        snap: 0.18,
+        med: 0.5,
+        slow: 1.0,
+      };
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      var TOTAL = 3.563;
+      var words = ["#s2-w0","#s2-w1","#s2-w2"];
+      var staggerGap = 0.14;
+      words.forEach(function(sel, i) {
+        tl.fromTo(sel,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: DUR.med, ease: EASE.entry },
+          0.1 + i * staggerGap
+        );
+      });
+
+      tl.fromTo("#s2-accolade",
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: DUR.med, ease: EASE.entry },
+        0.7
+      );
+
+      var state = { value: 0, fontSize: 52 };
+      var counterEl = document.getElementById("s2-accolade-num");
+      tl.to(state, {
+        value: 50,
+        fontSize: 72,
+        duration: 1.4,
+        ease: "power3.out",
+        onUpdate: function() {
+          counterEl.textContent = "Top " + Math.round(state.value);
+          counterEl.style.fontSize = state.fontSize + "px";
+        }
+      }, 0.9);
+
+      tl.fromTo("#root",
+        { x: 0 },
+        { x: 20, duration: TOTAL, ease: EASE.drift },
+        0
+      );
+
+      window.__timelines["scene_2"] = tl;
+    </script>
+  </div>
+</template>

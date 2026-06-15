@@ -1,0 +1,131 @@
+<template id="scene_10-template">
+  <div id="root" class="scene_10-root" data-composition-id="scene_10" data-width="1920" data-height="1080" data-duration="3.669" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+    <style>
+      #root {
+        background: var(--canvas);
+        font-family: var(--font-body);
+      }
+      #root *, #root *::before, #root *::after { box-sizing: border-box; }
+
+      .s10-mesh-bg {
+        position: absolute; inset: 0; z-index: 0;
+        background:
+          radial-gradient(ellipse at 30% 35%, color-mix(in srgb, var(--brand-primary) 12%, transparent) 0%, transparent 60%),
+          radial-gradient(ellipse at 70% 65%, color-mix(in srgb, var(--brand-secondary) 10%, transparent) 0%, transparent 55%),
+          radial-gradient(ellipse at 50% 85%, color-mix(in srgb, var(--brand-accent) 8%, transparent) 0%, transparent 50%);
+      }
+
+      .s10-container {
+        position: relative; z-index: 1;
+        width: 100%; height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+      }
+
+      .s10-swap-wrap {
+        position: relative;
+        width: 900px;
+        height: 280px;
+      }
+
+      .s10-word {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-size: 140px;
+        line-height: 1;
+        color: var(--ink);
+        transform-origin: 50% 50%;
+        will-change: transform, opacity;
+        opacity: 0;
+      }
+
+      .s10-word-active {
+        color: var(--brand-primary);
+      }
+    </style>
+
+    <div class="s10-mesh-bg"></div>
+
+    <div class="s10-container">
+      <div class="s10-swap-wrap">
+        <div class="s10-word" id="s10-w1">fun</div>
+        <div class="s10-word" id="s10-w2">engaging</div>
+        <div class="s10-word" id="s10-w3">family</div>
+      </div>
+    </div>
+
+    <script>
+      const EASE = {
+        entry: "power2.out",
+        emphasis: "power2.inOut",
+        exit: "power2.in",
+        drift: "sine.inOut",
+      };
+      const DUR = {
+        snap: 0.18,
+        med: 0.5,
+        slow: 1.0,
+      };
+
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      var EXIT_SCALE = 0.7;
+      var EXIT_DUR = 0.3;
+      var ENTER_DUR = 0.5;
+      var OVERLAP = 0.15;
+
+      /* dynamic-content-sequencing: three words, each ~1.2s */
+      /* Word 1: fun — enters immediately, gold accent */
+      tl.fromTo("#s10-w1",
+        { scale: EXIT_SCALE, opacity: 0 },
+        { scale: 1, opacity: 1, duration: ENTER_DUR, ease: EASE.entry },
+        0
+      );
+      /* Color to gold for active word */
+      tl.set("#s10-w1", { color: "var(--brand-primary)" }, 0);
+
+      /* scale-swap-transition: Word 1 out, Word 2 in at ~1.2s */
+      tl.to("#s10-w1", {
+        scale: EXIT_SCALE, opacity: 0, duration: EXIT_DUR, ease: EASE.exit
+      }, 1.0);
+      tl.set("#s10-w1", { color: "var(--ink)" }, 1.0);
+
+      tl.fromTo("#s10-w2",
+        { scale: EXIT_SCALE, opacity: 0 },
+        { scale: 1, opacity: 1, duration: ENTER_DUR, ease: EASE.entry },
+        1.0 + EXIT_DUR - OVERLAP
+      );
+      tl.set("#s10-w2", { color: "var(--brand-primary)" }, 1.0 + EXIT_DUR - OVERLAP);
+
+      /* scale-swap-transition: Word 2 out, Word 3 in at ~2.2s */
+      tl.to("#s10-w2", {
+        scale: EXIT_SCALE, opacity: 0, duration: EXIT_DUR, ease: EASE.exit
+      }, 2.2);
+      tl.set("#s10-w2", { color: "var(--ink)" }, 2.2);
+
+      tl.fromTo("#s10-w3",
+        { scale: EXIT_SCALE, opacity: 0 },
+        { scale: 1, opacity: 1, duration: ENTER_DUR, ease: EASE.entry },
+        2.2 + EXIT_DUR - OVERLAP
+      );
+      tl.set("#s10-w3", { color: "var(--brand-primary)" }, 2.2 + EXIT_DUR - OVERLAP);
+
+      /* Macro camera: slow dolly-out */
+      tl.fromTo(".s10-container",
+        { scale: 1.04 },
+        { scale: 1.0, duration: 3.669, ease: EASE.drift },
+        0
+      );
+
+      window.__timelines["scene_10"] = tl;
+    </script>
+  </div>
+</template>
