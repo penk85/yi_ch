@@ -1,0 +1,224 @@
+{
+  "project": "Young Israel of Cherry Hill Promo",
+  "narrativeArchetype": "Future Pacing with Feature-Benefit Cascade",
+  "orientation": "landscape",
+  "emotionalArc": "Warm invitation drawing young families into a vision of ideal Jewish suburban life, building confidence through concrete proof points — affordable homes, excellent schools, rich communal infrastructure — before resolving into belonging and a clear call home.",
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Hook — Your Family Belongs Here",
+      "transition": {
+        "intent": "cut",
+        "description": "Cold open on warm gold typography over deep navy; no previous scene to transition from"
+      },
+      "narrativeIntent": {
+        "type": "hook",
+        "narrativeRole": "Hails young Jewish families directly with a promise of belonging, creating an immediate emotional gap",
+        "keyMessage": "There is a place where your family truly belongs",
+        "persuasion": "Direct address / audience segmentation + Future pacing",
+        "emotionalBeat": "Warmth and curiosity"
+      },
+      "assetCandidates": [],
+      "script": "Picture the community your family deserves.",
+      "estimatedDuration": "5s"
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Vision — Cherry Hill Living",
+      "transition": {
+        "intent": "dissolve",
+        "description": "Soft dissolve from title typography into warm suburban imagery feel; gold accents carry through"
+      },
+      "narrativeIntent": {
+        "type": "benefit_highlight",
+        "narrativeRole": "Paints the aspirational picture of Cherry Hill as an ideal place to raise a family",
+        "keyMessage": "Cherry Hill is nationally recognized as one of the best places to live",
+        "persuasion": "Authority bias + Aspiration / innovation bias",
+        "emotionalBeat": "Aspiration and pride"
+      },
+      "assetCandidates": [],
+      "script": "Cherry Hill — named one of America's best places to live.",
+      "estimatedDuration": "5s"
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Location — Connected to Everything",
+      "transition": {
+        "intent": "slide",
+        "description": "Directional slide right carrying the eye from suburban vision to a geographic context map feel"
+      },
+      "narrativeIntent": {
+        "type": "feature_showcase",
+        "narrativeRole": "Grounds the vision with practical geography — close to major Jewish centers",
+        "keyMessage": "Cherry Hill is minutes from Philly, an hour from Lakewood, close to NYC and Baltimore",
+        "persuasion": "Friction reduction + Empirical proof & concrete numbers",
+        "emotionalBeat": "Reassurance and ease"
+      },
+      "assetCandidates": [],
+      "script": "Fifteen minutes from Philly. One hour from Lakewood. Close to everything.",
+      "estimatedDuration": "6s"
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Affordability — Homes You Can Own",
+      "transition": {
+        "intent": "slide",
+        "description": "Slide continues rightward momentum; numbers appear as bold typographic callouts on warm background"
+      },
+      "narrativeIntent": {
+        "type": "feature_showcase",
+        "narrativeRole": "Delivers the affordability proof point that removes financial anxiety",
+        "keyMessage": "Beautiful homes from $300K to $580K — real affordability for young families",
+        "persuasion": "Price anchoring + Pain removal (bold absolutes)",
+        "emotionalBeat": "Relief and excitement"
+      },
+      "assetCandidates": [],
+      "script": "Beautiful homes, three hundred to five-eighty. Room to grow.",
+      "estimatedDuration": "5s"
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Schools — Educate with Confidence",
+      "transition": {
+        "intent": "slide",
+        "description": "Slide left introducing education theme; eye moves to warm imagery of learning"
+      },
+      "narrativeIntent": {
+        "type": "feature_showcase",
+        "narrativeRole": "Highlights excellent Jewish education options as a key family draw",
+        "keyMessage": "Excellent Jewish Day Schools and Yeshivas for your children",
+        "persuasion": "Value-centric positioning + Social belonging",
+        "emotionalBeat": "Confidence and trust"
+      },
+      "assetCandidates": [],
+      "script": "Excellent Jewish day schools and yeshivas for your children.",
+      "estimatedDuration": "5s"
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Infrastructure — Everything in Place",
+      "transition": {
+        "intent": "slide",
+        "description": "Continuous slide maintaining cascade rhythm; icons or typographic list builds on screen"
+      },
+      "narrativeIntent": {
+        "type": "feature_showcase",
+        "narrativeRole": "Stacks communal infrastructure to prove this is a fully equipped frum community",
+        "keyMessage": "Eruv, mikvaos, kosher restaurants, a community kollel — everything you need",
+        "persuasion": "Value stacking + In-group signaling (insider terms)",
+        "emotionalBeat": "Belonging and reassurance"
+      },
+      "assetCandidates": [],
+      "script": "Eruv. Mikvaos. Kosher dining. A thriving community kollel.",
+      "estimatedDuration": "6s"
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Young Families — You Are Not Alone",
+      "transition": {
+        "intent": "dissolve",
+        "description": "Dissolve shifts tone from infrastructure list to warm human connection; softer palette moment"
+      },
+      "narrativeIntent": {
+        "type": "social_proof",
+        "narrativeRole": "Validates that young families are already choosing Cherry Hill — social proof through community",
+        "keyMessage": "An abundance of young families already call this home",
+        "persuasion": "Bandwagon effect + Social belonging",
+        "emotionalBeat": "Belonging and excitement"
+      },
+      "assetCandidates": [],
+      "script": "An abundance of young families already call this home.",
+      "estimatedDuration": "5s"
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Product Intro — Young Israel",
+      "transition": {
+        "intent": "dissolve",
+        "description": "Dissolve into brand navy and gold; synagogue identity emerges as the anchor of community life"
+      },
+      "narrativeIntent": {
+        "type": "product_intro",
+        "narrativeRole": "Introduces Young Israel of Cherry Hill as the heart and anchor of this community",
+        "keyMessage": "Young Israel of Cherry Hill has served this community since 1996",
+        "persuasion": "Brand authority + Authority bias",
+        "emotionalBeat": "Trust and pride"
+      },
+      "assetCandidates": [],
+      "script": "Young Israel of Cherry Hill — serving this community since 1996.",
+      "estimatedDuration": "5s"
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Rabbi & Values — Spiritual Leadership",
+      "transition": {
+        "intent": "dissolve",
+        "description": "Soft dissolve deepens the personal tone; warm lighting feel as leadership is introduced"
+      },
+      "narrativeIntent": {
+        "type": "feature_showcase",
+        "narrativeRole": "Establishes spiritual depth and leadership under Rabbi Bienenfeld",
+        "keyMessage": "Under Rabbi Bienenfeld, the shul is a place of growth, joy, and togetherness",
+        "persuasion": "Expert authority + Aspiration / innovation bias",
+        "emotionalBeat": "Reverence and warmth"
+      },
+      "assetCandidates": [],
+      "script": "Led by Rabbi Bienenfeld — spiritual growth, joyful living, real connection.",
+      "estimatedDuration": "6s"
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Character — Fun, Engaging, Family",
+      "transition": {
+        "intent": "slide",
+        "description": "Slide upward lifts energy; triplet values appear as bold typographic beats"
+      },
+      "narrativeIntent": {
+        "type": "benefit_highlight",
+        "narrativeRole": "Captures the shul's personality — not stiff, but warm and alive",
+        "keyMessage": "This is a shul that is fun, engaging, and feels like family",
+        "persuasion": "Rule of three (triplet structure) + Social belonging",
+        "emotionalBeat": "Joy and belonging"
+      },
+      "assetCandidates": [],
+      "script": "Fun. Engaging. A community that feels like family.",
+      "estimatedDuration": "5s"
+    },
+    {
+      "sceneNumber": 11,
+      "sceneName": "Branding — Kulanu K'echad",
+      "transition": {
+        "intent": "dissolve",
+        "description": "Dissolve into a centered, reverent typographic moment; Hebrew and English text share the frame"
+      },
+      "narrativeIntent": {
+        "type": "branding",
+        "narrativeRole": "Delivers the synagogue's unifying motto as an emotional climax — the philosophical center",
+        "keyMessage": "Kulanu K'echad — We Are All One",
+        "persuasion": "Social belonging + In-group signaling (insider terms)",
+        "emotionalBeat": "Unity and awe"
+      },
+      "assetCandidates": [],
+      "script": "<brand>Kulanu K'echad</brand> — we are all one.",
+      "estimatedDuration": "6s"
+    },
+    {
+      "sceneNumber": 12,
+      "sceneName": "CTA — Come Home",
+      "transition": {
+        "intent": "zoom",
+        "description": "Zoom pushes through the motto into a warm, inviting final frame with URL and call to action"
+      },
+      "narrativeIntent": {
+        "type": "cta",
+        "narrativeRole": "Converts emotional momentum into action — visit the site, start the journey home",
+        "keyMessage": "Come home to Cherry Hill — visit yicherryhill.com",
+        "persuasion": "Future pacing + Frictionless adoption",
+        "emotionalBeat": "Motivation and warmth"
+      },
+      "assetCandidates": [],
+      "script": "Come home to Cherry Hill. Visit <cta>yicherryhill.com</cta>.",
+      "estimatedDuration": "6s"
+    }
+  ]
+}

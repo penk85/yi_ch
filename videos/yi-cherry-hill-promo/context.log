@@ -1,1 +1,10 @@
 Step 1 capture: no-capture mode, tokens written
+
+## Phase 2 — Story Design (story-design subagent)
+- **Archetype**: Future Pacing with Feature-Benefit Cascade
+- **Hook strategy**: Direct address / invitation ("Picture the community your family deserves")
+- **Scenes**: 12 scenes, ~65s total (landscape)
+- **Arc**: Warm invitation → vision of Cherry Hill → cascade of proof points (location, affordability, schools, infrastructure, young families) → Young Israel intro → Rabbi/values → character triplet → Kulanu K'echad branding climax → CTA
+- **Assets**: No captured assets available; all scenes use text-only assetCandidates ([])
+- **Validator**: schema OK
+- **Output**: narrator_scripts.json
