@@ -1,0 +1,140 @@
+## Film direction
+**Palette:** 60% canvas (cream paper-anchor reads through mesh veil) / 30% hairline dashed rules + repeated canvas (no surface token; soft-editorial layers with translucency, not a second fill) / 10% accent — brand-primary (warm gold) carries hero words, CTA pill, and stat emphasis; brand-secondary (deep navy) reserved for ink and the brand-reveal scene's display type. Two-color limit per scene per preset rules. Ink stays brand-secondary navy throughout.
+**Type:** display (serif) = hero claims and scene anchors only; body (sans) = supporting copy, location labels, list items; mono = eyebrow metadata and chapter marks. Italic `<em>` is the system's only emphasis — no uppercase anywhere (soft-editorial voice register). Sentence case throughout.
+**Motion:** entries `EASE.entry`; heroes heavy; idle `EASE.drift`; exits none — scenes hold the final frame. Budget: one root-level camera move per scene (slow drift or dolly) + at most one breathing hero element; everything else rests. Stagger totals capped at 500ms.
+**Ambient:** brand-color mesh background (heavy veil, brand-primary gold + brand-secondary navy + brand-accent as three subtle atmospheric blobs, reading as a warm restrained base at viewing distance) — consistent across all scenes including closer. Sparse float particles in brand-primary at low opacity as the only coexisting layer.
+**Never (film-wide):** no drop shadows, no glow halos, no blur halos, no neon, no bokeh, no mesh gradients beyond the declared mesh default, no purple-blue AI gradient, no cards stacked on cards, no uppercase text, no dark ground scenes.
+**Transitions:** `crossfade` + `push-slide` as primary vocabulary; `zoom-through` reserved for the finale only.
+**Stillness-before-climax:** scenes 8 and 11 only.
+**Assets:** no `assetCandidates` provided in any scene — this is a text-driven film. Every scene relies on typographic composition, brand color, and component structures for visual density.
+## Tokens / easings / voice
+:root {
+  --brand-primary:   #F9A825;
+  --brand-secondary: #1A237E;
+  --brand-tertiary:  #37474F;
+  --brand-accent:    #FDD835;
+  --brand-costume:   #FFFFFF;
+  --ink:             #1A237E;
+  --canvas:          #FFFFFF;
+  --brand-gradient:  linear-gradient(135deg, #F9A825 0%, #1A237E 50%, #FDD835 100%);
+  --deco-1:          #F7CB46;
+  --deco-2:          #99E885;
+  --deco-3:          #C0F7FE;
+  --deco-4:          #FE90E8;
+  --font-display:    'EB Garamond', Georgia, serif;
+  --font-body:       'Work Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono:       'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --paper-anchor: #f2eedf;
+  --surface-card: rgba(255, 255, 255, 0.55);
+  --surface-paper: color-mix(in srgb, var(--brand-accent) 8%, var(--paper-anchor));
+  --rule-dashed: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+  --rule-solid: 1.5px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  --radius-card-lg: 36px; /* large insight / closer / stat cards */
+  --radius-card: 28px; /* default cards, items, process nodes */
+  --radius-card-sm: 24px; /* compact panels, action bars */
+  --radius-tile: 16px; /* swatch tiles */
+  --radius-chip: 14px; /* small decorative chips */
+  --radius-pill: 999px; /* status pills, swatch discs */
+  --gap-outer: 4.2vw; /* ~80px on 1920 — outer slide padding */
+  --gap-cards: 1.5vw; /* ~28px between cards in a row */
+  --gap-cards-lg: 1.9vw; /* ~36px between major panels */
+  --gap-stack: 1.9vw; /* vertical between stacked text */
+  --pad-card-lg: 64px 48px;
+  --pad-card-md: 48px 52px;
+  --pad-card-sm: 28px 30px;
+  --measure-body: 32vw; /* ~614px ≈ 65ch at body size */
+  --measure-display: 43vw; /* ~826px ≈ display headline cap */
+}
+const EASE = {
+  entry: "power2.out", // soft arrival, no overshoot — "considered, unhurried"
+  emphasis: "power2.inOut", // gentle inflection on emphasis beats
+  exit: "power2.in", // gentle dismissal
+  drift: "sine.inOut", // ambient breath on translucent cards
+};
+const DUR = {
+  snap: 0.18, // even "fast" is unhurried — upper-band snap
+  med: 0.5,
+  slow: 1.0,
+};
+// RULE: no overshoot anywhere. back.out / elastic / bounce break the editorial calm.
+// RULE: italic-em phrases inside a headline fade in *after* the roman headline lands
+//       (DUR.snap delay) — the weight drop is a softening, not an entry beat.
+// RULE: drop caps enter on a separate beat from their paragraph (DUR.med delay)
+//       so the 132px serif glyph reads as a deliberate ornament, not a stutter.
+// RULE: pastel card fills cross-fade between scenes, never hard-cut. Color is a
+//       slow tonal shift, not a flash.
+// RULE: roman-numeral step ordinals (i. ii. iii.) tween linearly on counter reveals.
+//       Eased numerals read as "animated" not "printed".
+# Voice register: soft-editorial
+
+## From the site (DNA)
+- Tone: warm
+- Heading style: Sentence case
+
+## Transform recipe
+
+Take the brand's product description / value prop. Transform with:
+
+1. Keep complete sentences. Sentence case throughout — soft-editorial reads
+   UPPERCASE as shouting, so on-screen text stays sentence case everywhere.
+2. Prefer one warm noun phrase over a list of features. The mood is "essayist's
+   summary", not "product spec".
+3. Drop hyperbole and superlatives (`best`, `most`, `revolutionary`). Replace with
+   measured adjectives (`considered`, `quiet`, `careful`).
+4. Use italic `<em>` inside a headline to highlight a single warm phrase — usually
+   2–4 words mid-sentence. The italic is the system's emphasis.
+5. End scenes with a quiet declarative — no exclamation, no question mark.
+6. Cite proofs (years, customers, awards) as factual asides in italic serif at
+   marker size, not as boastful pull-out stats.
+
+**Example:**
+
+- IN: `Figma helps teams design products collaboratively in real time`
+- OUT: `A canvas where teams design <em>together</em>, in real time. — Trusted by four million, quietly.`
+
+> Phase 4b scene workers: apply to DOM text only (headline / chip / button copy).
+> Phase 2 narrator scripts are TTS-bound — do NOT uppercase or strip articles.
+
+## Scenes
+### scene_4
+```yaml
+{
+  "start_s": 10.923,
+  "effects": [
+    "counting-dynamic-scale",
+    "sine-wave-loop"
+  ],
+  "rule_paths": [
+    "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/counting-dynamic-scale.md",
+    "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/sine-wave-loop.md"
+  ],
+  "assetCandidates": [],
+  "estimatedDuration_s": 3.84,
+  "voicePath": "assets/voice/scene_4.wav",
+  "wordsPath": "",
+  "blueprint": "composed",
+  "design_chunks": {
+    "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+    "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+    "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+    "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+    "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+    "components": [
+      "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+      "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+      "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+      "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+      "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+      "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+      "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+      "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+      "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+      "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+      "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+      "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+    ]
+  },
+  "creative_brief": "Relief breaking through — a held breath releasing on real numbers. Centered composition: two price figures count up at data tier with dynamic font scaling, growing in visual weight as the numbers climb. A warm body-copy phrase sits below as a quiet declarative. The counter pair is the sole primary subject, occupying 45% of canvas height. Macro motion: slow dolly-in. The breathing element is the price display after count completes — gentle sine drift on final scale. Brand-primary gold carries the price numerals. Eye settles center before sliding into education.\n\n"
+}
+```
+

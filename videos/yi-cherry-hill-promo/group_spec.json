@@ -1,0 +1,645 @@
+{
+  "total_scenes": 12,
+  "width": 1920,
+  "height": 1080,
+  "captions_enabled": false,
+  "film_direction": "**Palette:** 60% canvas (cream paper-anchor reads through mesh veil) / 30% hairline dashed rules + repeated canvas (no surface token; soft-editorial layers with translucency, not a second fill) / 10% accent — brand-primary (warm gold) carries hero words, CTA pill, and stat emphasis; brand-secondary (deep navy) reserved for ink and the brand-reveal scene's display type. Two-color limit per scene per preset rules. Ink stays brand-secondary navy throughout.\n**Type:** display (serif) = hero claims and scene anchors only; body (sans) = supporting copy, location labels, list items; mono = eyebrow metadata and chapter marks. Italic `<em>` is the system's only emphasis — no uppercase anywhere (soft-editorial voice register). Sentence case throughout.\n**Motion:** entries `EASE.entry`; heroes heavy; idle `EASE.drift`; exits none — scenes hold the final frame. Budget: one root-level camera move per scene (slow drift or dolly) + at most one breathing hero element; everything else rests. Stagger totals capped at 500ms.\n**Ambient:** brand-color mesh background (heavy veil, brand-primary gold + brand-secondary navy + brand-accent as three subtle atmospheric blobs, reading as a warm restrained base at viewing distance) — consistent across all scenes including closer. Sparse float particles in brand-primary at low opacity as the only coexisting layer.\n**Never (film-wide):** no drop shadows, no glow halos, no blur halos, no neon, no bokeh, no mesh gradients beyond the declared mesh default, no purple-blue AI gradient, no cards stacked on cards, no uppercase text, no dark ground scenes.\n**Transitions:** `crossfade` + `push-slide` as primary vocabulary; `zoom-through` reserved for the finale only.\n**Stillness-before-climax:** scenes 8 and 11 only.\n**Assets:** no `assetCandidates` provided in any scene — this is a text-driven film. Every scene relies on typographic composition, brand color, and component structures for visual density.",
+  "total_duration_s": 46.508,
+  "bgm_path": "",
+  "font_face_css": "",
+  "brand_tokens_css": ":root {\n  --brand-primary:   #F9A825;\n  --brand-secondary: #1A237E;\n  --brand-tertiary:  #37474F;\n  --brand-accent:    #FDD835;\n  --brand-costume:   #FFFFFF;\n  --ink:             #1A237E;\n  --canvas:          #FFFFFF;\n  --brand-gradient:  linear-gradient(135deg, #F9A825 0%, #1A237E 50%, #FDD835 100%);\n  --deco-1:          #F7CB46;\n  --deco-2:          #99E885;\n  --deco-3:          #C0F7FE;\n  --deco-4:          #FE90E8;\n  --font-display:    'EB Garamond', Georgia, serif;\n  --font-body:       'Work Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;\n  --font-mono:       'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;\n  --paper-anchor: #f2eedf;\n  --surface-card: rgba(255, 255, 255, 0.55);\n  --surface-paper: color-mix(in srgb, var(--brand-accent) 8%, var(--paper-anchor));\n  --rule-dashed: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent);\n  --rule-solid: 1.5px solid color-mix(in srgb, var(--ink) 35%, transparent);\n  --radius-card-lg: 36px; /* large insight / closer / stat cards */\n  --radius-card: 28px; /* default cards, items, process nodes */\n  --radius-card-sm: 24px; /* compact panels, action bars */\n  --radius-tile: 16px; /* swatch tiles */\n  --radius-chip: 14px; /* small decorative chips */\n  --radius-pill: 999px; /* status pills, swatch discs */\n  --gap-outer: 4.2vw; /* ~80px on 1920 — outer slide padding */\n  --gap-cards: 1.5vw; /* ~28px between cards in a row */\n  --gap-cards-lg: 1.9vw; /* ~36px between major panels */\n  --gap-stack: 1.9vw; /* vertical between stacked text */\n  --pad-card-lg: 64px 48px;\n  --pad-card-md: 48px 52px;\n  --pad-card-sm: 28px 30px;\n  --measure-body: 32vw; /* ~614px ≈ 65ch at body size */\n  --measure-display: 43vw; /* ~826px ≈ display headline cap */\n}",
+  "groups": [
+    {
+      "worker_id": "w1",
+      "scene_ids": [
+        "scene_1"
+      ],
+      "scenes": {
+        "scene_1": {
+          "start_s": 0,
+          "effects": [
+            "discrete-text-sequence",
+            "sine-wave-loop"
+          ],
+          "rule_paths": [
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/discrete-text-sequence.md",
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/sine-wave-loop.md"
+          ],
+          "assetCandidates": [],
+          "estimatedDuration_s": 2.709,
+          "voicePath": "assets/voice/scene_1.wav",
+          "wordsPath": "",
+          "blueprint": "composed",
+          "design_chunks": {
+            "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+            "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+            "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+            "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+            "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+            "components": [
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+            ]
+          },
+          "creative_brief": "Warm invitation landing softly on an empty page — the editorial equivalent of a door opening. Centered composition: a single hero display phrase assembles via discrete text sequence, each word arriving as a considered placement rather than a typed stream. Macro motion: slow dolly-in on the scene root across the full beat, pulling the viewer gently inward. The hero phrase occupies 50%+ of canvas width, generous breathing room on all sides. Brand-primary gold carries the key warm noun — one `<em>` phrase glows as the emotional anchor. Float particles drift upward through the mesh veil. Eye travels center outward toward the next scene's content.\n\n"
+        }
+      }
+    },
+    {
+      "worker_id": "w2",
+      "scene_ids": [
+        "scene_2"
+      ],
+      "scenes": {
+        "scene_2": {
+          "start_s": 2.709,
+          "effects": [
+            "discrete-text-sequence",
+            "counting-dynamic-scale"
+          ],
+          "rule_paths": [
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/discrete-text-sequence.md",
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/counting-dynamic-scale.md"
+          ],
+          "assetCandidates": [],
+          "estimatedDuration_s": 3.563,
+          "voicePath": "assets/voice/scene_2.wav",
+          "wordsPath": "",
+          "blueprint": "composed",
+          "design_chunks": {
+            "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+            "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+            "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+            "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+            "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+            "components": [
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+            ]
+          },
+          "creative_brief": "Aspirational pride swelling like a chest-out breath. Asymmetric 60/40 composition: hero display phrase anchored left at display tier, a stat-like accolade callout (the \"best places\" claim) scaled dynamically on the right as a framed proof aside in italic serif at marker size. Macro motion: slow lateral drift rightward. The accolade enters after the headline lands — staggered, not simultaneous. Brand-primary gold on the accolade accent word only. Eye exits right toward the geographic context of the next scene.\n\n"
+        }
+      }
+    },
+    {
+      "worker_id": "w3",
+      "scene_ids": [
+        "scene_3"
+      ],
+      "scenes": {
+        "scene_3": {
+          "start_s": 6.272,
+          "effects": [
+            "dynamic-content-sequencing",
+            "center-outward-expansion"
+          ],
+          "rule_paths": [
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/dynamic-content-sequencing.md",
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/center-outward-expansion.md"
+          ],
+          "assetCandidates": [],
+          "estimatedDuration_s": 4.651,
+          "voicePath": "assets/voice/scene_3.wav",
+          "wordsPath": "",
+          "blueprint": "composed",
+          "design_chunks": {
+            "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+            "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+            "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+            "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+            "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+            "components": [
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+            ]
+          },
+          "creative_brief": "Reassurance mapped as practical wayfinding — calm, factual, unhurried. Rule-of-thirds composition: a typographic distance list (three location-time pairs) sequenced dynamically, each pair entering in reading order with computed timing. Supporting chip-like labels mark city names. The pairs expand outward from a central anchor point, suggesting radiating connections. Macro motion: slow drift leftward, grounding the geographic spread. Primary subject is the distance list occupying 55% of canvas. Eye exits left toward the affordability proof.\n\n"
+        }
+      }
+    },
+    {
+      "worker_id": "w4",
+      "scene_ids": [
+        "scene_4"
+      ],
+      "scenes": {
+        "scene_4": {
+          "start_s": 10.923,
+          "effects": [
+            "counting-dynamic-scale",
+            "sine-wave-loop"
+          ],
+          "rule_paths": [
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/counting-dynamic-scale.md",
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/sine-wave-loop.md"
+          ],
+          "assetCandidates": [],
+          "estimatedDuration_s": 3.84,
+          "voicePath": "assets/voice/scene_4.wav",
+          "wordsPath": "",
+          "blueprint": "composed",
+          "design_chunks": {
+            "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+            "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+            "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+            "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+            "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+            "components": [
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+            ]
+          },
+          "creative_brief": "Relief breaking through — a held breath releasing on real numbers. Centered composition: two price figures count up at data tier with dynamic font scaling, growing in visual weight as the numbers climb. A warm body-copy phrase sits below as a quiet declarative. The counter pair is the sole primary subject, occupying 45% of canvas height. Macro motion: slow dolly-in. The breathing element is the price display after count completes — gentle sine drift on final scale. Brand-primary gold carries the price numerals. Eye settles center before sliding into education.\n\n"
+        }
+      }
+    },
+    {
+      "worker_id": "w5",
+      "scene_ids": [
+        "scene_5"
+      ],
+      "scenes": {
+        "scene_5": {
+          "start_s": 14.763,
+          "effects": [
+            "discrete-text-sequence",
+            "sine-wave-loop"
+          ],
+          "rule_paths": [
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/discrete-text-sequence.md",
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/sine-wave-loop.md"
+          ],
+          "assetCandidates": [],
+          "estimatedDuration_s": 3.861,
+          "voicePath": "assets/voice/scene_5.wav",
+          "wordsPath": "",
+          "blueprint": "composed",
+          "design_chunks": {
+            "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+            "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+            "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+            "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+            "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+            "components": [
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+            ]
+          },
+          "creative_brief": "Quiet confidence — the steady hand of a parent choosing well. Asymmetric 70/30 composition: hero phrase left-aligned at display tier with generous right margin, a small supporting aside (an italic serif factual note) tucked into the right third. The hero phrase assembles via discrete text sequence — measured, not rushed. Macro motion: slow drift rightward. Brand-primary gold on one `<em>` word in the headline. No secondary live elements — stillness carries the confidence. Eye moves right toward infrastructure.\n\n"
+        }
+      }
+    },
+    {
+      "worker_id": "w6",
+      "scene_ids": [
+        "scene_6"
+      ],
+      "scenes": {
+        "scene_6": {
+          "start_s": 18.624,
+          "effects": [
+            "dynamic-content-sequencing",
+            "center-outward-expansion"
+          ],
+          "rule_paths": [
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/dynamic-content-sequencing.md",
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/center-outward-expansion.md"
+          ],
+          "assetCandidates": [],
+          "estimatedDuration_s": 4.096,
+          "voicePath": "assets/voice/scene_6.wav",
+          "wordsPath": "",
+          "blueprint": "composed",
+          "design_chunks": {
+            "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+            "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+            "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+            "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+            "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+            "components": [
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+            ]
+          },
+          "creative_brief": "Belonging stacking brick by brick — each item a quiet proof of completeness. Layered depth composition: four infrastructure items enter as a staggered vertical list, sequenced by content length. Items use chip-like label structures with dashed rule separators between them. The list is the primary subject at 50% canvas width, centered. Macro motion: slow dolly-out, widening the frame as the list grows — the community is bigger than any one item. Brand-primary gold accents the final list item as the capstone. Eye dissolves inward toward the human warmth of families.\n\n"
+        }
+      }
+    },
+    {
+      "worker_id": "w7",
+      "scene_ids": [
+        "scene_7"
+      ],
+      "scenes": {
+        "scene_7": {
+          "start_s": 22.72,
+          "effects": [
+            "sine-wave-loop",
+            "avatar-cloud-network"
+          ],
+          "rule_paths": [
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/sine-wave-loop.md",
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/avatar-cloud-network.md"
+          ],
+          "assetCandidates": [],
+          "estimatedDuration_s": 3.371,
+          "voicePath": "assets/voice/scene_7.wav",
+          "wordsPath": "",
+          "blueprint": "composed",
+          "design_chunks": {
+            "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+            "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+            "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+            "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+            "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+            "components": [
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+            ]
+          },
+          "creative_brief": "Warmth multiplied — not one family but many, orbiting a shared center. Centered composition: an avatar cloud network with abstract family silhouettes distributed on an elliptical ring, connected by dashed SVG lines to a central hub. A short hero phrase sits above at display tier. The cloud is the primary subject occupying 55% of canvas. Macro motion: slow drift upward, lifting the energy. The cloud breathes gently on `EASE.drift` as the one live element. Brand-primary gold on the hub node. Eye softens center before the brand reveal.\n\n"
+        }
+      }
+    },
+    {
+      "worker_id": "w8",
+      "scene_ids": [
+        "scene_8"
+      ],
+      "scenes": {
+        "scene_8": {
+          "start_s": 26.091,
+          "effects": [
+            "discrete-text-sequence",
+            "sine-wave-loop"
+          ],
+          "rule_paths": [
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/discrete-text-sequence.md",
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/sine-wave-loop.md"
+          ],
+          "assetCandidates": [],
+          "estimatedDuration_s": 5.483,
+          "voicePath": "assets/voice/scene_8.wav",
+          "wordsPath": "",
+          "blueprint": "composed",
+          "design_chunks": {
+            "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+            "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+            "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+            "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+            "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+            "components": [
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+            ]
+          },
+          "creative_brief": "Trust arriving with the weight of years — unhurried, certain. Centered composition: the synagogue name assembles at hero display tier via discrete text sequence, word by word, with the founding year (\"since 1996\") appearing as a body-tier factual aside below. **Stillness-before-climax: 0.5s pause** after the name fully assembles before the year aside enters — the name stands alone for a breath. Macro motion: slow dolly-in. Brand-secondary navy dominates the display type against the warm mesh; brand-primary gold on the year. Eye holds center, preparing for the spiritual deepening.\n\n"
+        }
+      }
+    },
+    {
+      "worker_id": "w9",
+      "scene_ids": [
+        "scene_9"
+      ],
+      "scenes": {
+        "scene_9": {
+          "start_s": 31.574,
+          "effects": [
+            "discrete-text-sequence",
+            "sine-wave-loop"
+          ],
+          "rule_paths": [
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/discrete-text-sequence.md",
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/sine-wave-loop.md"
+          ],
+          "assetCandidates": [],
+          "estimatedDuration_s": 5.355,
+          "voicePath": "assets/voice/scene_9.wav",
+          "wordsPath": "",
+          "blueprint": "composed",
+          "design_chunks": {
+            "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+            "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+            "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+            "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+            "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+            "components": [
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+            ]
+          },
+          "creative_brief": "Reverence and warmth — a candle-lit Shabbos table feeling. Asymmetric 60/40 composition: Rabbi's name and title left-aligned at display tier, three value words (\"growth, joy, connection\") staggered as a vertical triplet on the right, each entering on its own beat. The triplet uses body tier with `<em>` italic on each word. Macro motion: slow drift leftward. Primary subject is the name at 45% canvas width. Brand-primary gold carries one value word as the warm accent. No SFX — the narration's warmth is sufficient. Eye drifts upward toward the energy shift.\n\n"
+        }
+      }
+    },
+    {
+      "worker_id": "w10",
+      "scene_ids": [
+        "scene_10"
+      ],
+      "scenes": {
+        "scene_10": {
+          "start_s": 36.929,
+          "effects": [
+            "dynamic-content-sequencing",
+            "scale-swap-transition"
+          ],
+          "rule_paths": [
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/dynamic-content-sequencing.md",
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/scale-swap-transition.md"
+          ],
+          "assetCandidates": [],
+          "estimatedDuration_s": 3.669,
+          "voicePath": "assets/voice/scene_10.wav",
+          "wordsPath": "",
+          "blueprint": "composed",
+          "design_chunks": {
+            "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+            "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+            "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+            "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+            "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+            "components": [
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+            ]
+          },
+          "creative_brief": "Joy bouncing in triplets — three words that land like laughter. Triptych composition: three bold display-tier words occupy three equal vertical zones, each entering via scale-swap (previous word shrinks as next word springs in). The words are the entire scene — they occupy 60% of canvas height collectively. Macro motion: slow dolly-out across the beat, framing all three. Brand-primary gold rotates across the three words (each gets the accent as it becomes primary). Fast rhythm — each word holds ~1.2s. Eye lifts center toward the motto.\n\n"
+        }
+      }
+    },
+    {
+      "worker_id": "w11",
+      "scene_ids": [
+        "scene_11"
+      ],
+      "scenes": {
+        "scene_11": {
+          "start_s": 40.598,
+          "effects": [
+            "discrete-text-sequence",
+            "sine-wave-loop"
+          ],
+          "rule_paths": [
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/discrete-text-sequence.md",
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/sine-wave-loop.md"
+          ],
+          "assetCandidates": [],
+          "estimatedDuration_s": 2.539,
+          "voicePath": "assets/voice/scene_11.wav",
+          "wordsPath": "",
+          "blueprint": "composed",
+          "design_chunks": {
+            "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+            "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+            "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+            "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+            "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+            "components": [
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+            ]
+          },
+          "creative_brief": "Unity and awe — a single breath shared by everyone in the room. Centered composition: the Hebrew motto at mega/climax tier (50%+ of canvas height), centered, with the English translation appearing below at body tier. The motto assembles via discrete text sequence. **Stillness-before-climax: 0.6s pause** after the Hebrew lands, before the English translation enters — the Hebrew stands alone as a reverent beat. Macro motion: slow dolly-in, pulling the viewer into the words. Brand-primary gold carries the Hebrew text; ink navy on the English. Mesh veil temporarily lightens to release brand-color saturation for this climax beat. Eye pushes forward into the CTA.\n\n"
+        }
+      }
+    },
+    {
+      "worker_id": "w12",
+      "scene_ids": [
+        "scene_12"
+      ],
+      "scenes": {
+        "scene_12": {
+          "start_s": 43.137,
+          "effects": [
+            "sine-wave-loop",
+            "press-release-spring"
+          ],
+          "rule_paths": [
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/sine-wave-loop.md",
+            "/home/user/yi_ch/.agents/skills/hyperframes-animation/rules/press-release-spring.md"
+          ],
+          "assetCandidates": [],
+          "estimatedDuration_s": 3.371,
+          "voicePath": "assets/voice/scene_12.wav",
+          "wordsPath": "",
+          "blueprint": "composed",
+          "design_chunks": {
+            "tokens_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/tokens.css",
+            "easings_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/easings.js",
+            "voice_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/voice.md",
+            "hints_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/composition-hints.md",
+            "type_roles_file": "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/type-roles.md",
+            "components": [
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/action-bar.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/button.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/chip.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/color-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/dashed-rule.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/drop-cap.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/hero.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/pull-quote.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/soft-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/stat-counter.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/step-card.html",
+              "/home/user/yi_ch/videos/yi-cherry-hill-promo/design-system/chunks/components/swatch-row.html"
+            ]
+          },
+          "creative_brief": "Motivation that feels like an open door, not a sales pitch — warm, direct, inevitable. Centered composition: a hero phrase at display tier (\"come home\") with a CTA pill below carrying the URL. The pill uses press-release-spring — a tactile compression and spring recovery that invites the click. Macro motion: slow dolly-in across the full beat, closing the distance. The hero phrase breathes gently on `EASE.drift` as the one live element. Brand-primary gold fills the CTA pill; navy ink on the hero phrase. The mesh veil returns to default weight after Scene 11's release. Eye rests — the film holds its final frame.\n"
+        }
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "from": "scene_1",
+      "to": "scene_2",
+      "type": "crossfade",
+      "direction": null,
+      "duration_s": 0.5
+    },
+    {
+      "from": "scene_2",
+      "to": "scene_3",
+      "type": "push-slide",
+      "direction": "RIGHT",
+      "duration_s": 0.5
+    },
+    {
+      "from": "scene_3",
+      "to": "scene_4",
+      "type": "push-slide",
+      "direction": "LEFT",
+      "duration_s": 0.5
+    },
+    {
+      "from": "scene_4",
+      "to": "scene_5",
+      "type": "push-slide",
+      "direction": "LEFT",
+      "duration_s": 0.5
+    },
+    {
+      "from": "scene_5",
+      "to": "scene_6",
+      "type": "push-slide",
+      "direction": "RIGHT",
+      "duration_s": 0.5
+    },
+    {
+      "from": "scene_6",
+      "to": "scene_7",
+      "type": "crossfade",
+      "direction": null,
+      "duration_s": 0.5
+    },
+    {
+      "from": "scene_7",
+      "to": "scene_8",
+      "type": "crossfade",
+      "direction": null,
+      "duration_s": 0.5
+    },
+    {
+      "from": "scene_8",
+      "to": "scene_9",
+      "type": "crossfade",
+      "direction": null,
+      "duration_s": 0.5
+    },
+    {
+      "from": "scene_9",
+      "to": "scene_10",
+      "type": "push-slide",
+      "direction": "UP",
+      "duration_s": 0.5
+    },
+    {
+      "from": "scene_10",
+      "to": "scene_11",
+      "type": "crossfade",
+      "direction": null,
+      "duration_s": 0.5
+    },
+    {
+      "from": "scene_11",
+      "to": "scene_12",
+      "type": "zoom-through",
+      "direction": null,
+      "duration_s": 0.4
+    }
+  ],
+  "sfx": []
+}

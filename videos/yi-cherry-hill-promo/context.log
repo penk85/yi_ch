@@ -8,3 +8,15 @@ Step 1 capture: no-capture mode, tokens written
 - **Assets**: No captured assets available; all scenes use text-only assetCandidates ([])
 - **Validator**: schema OK
 - **Output**: narrator_scripts.json
+
+## Phase 3 — Visual Design (completed)
+- Wrote `section_plan.md`: 12 scenes, Film Direction + per-scene blocks
+- Validator: exit 0 (12 scenes, 24 effect citations)
+- Preset: soft-editorial; brand navy (#1A237E) + gold (#F9A825)
+- D-class mesh background default applied to all scenes including closer
+- Transition vocabulary: crossfade + push-slide + zoom-through (finale only)
+- Stillness-before-climax: scenes 8 (brand intro) and 11 (motto reveal)
+- Composition templates used: centered (1,4,7,8,11,12), asymmetric (2,5,9), rule-of-thirds (3), layered-depth (6), triptych (10) — 5 distinct templates
+- No asset candidates — text-driven film throughout
+- No SFX used — narration carries the audio; editorial calm preserved
+- Captions: disabled (no caption band reserved)
